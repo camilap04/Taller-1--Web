@@ -27,7 +27,7 @@ font-family: 'Merriweather Sans', sans-serif;
 }
 .header {  
 background-color: white;
-height:20;
+height:10%;
 position: fixed;
 width: 100%;
 top: 0%;
@@ -35,10 +35,20 @@ left: 0%;
 
 }
 
-.nav{
+.list1{
 
     display: flex;
     justify-content: space-between;
+    width: 50%;
+    justify-content: flex-start;
+    
+}
+
+.nav2{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    justify-content: flex-end;
 }
 
 .nav-menu-link{
@@ -48,5 +58,11 @@ left: 0%;
 
 .nav-select{
     color: grey;
-   
+    text-decoration: none;
+}
+
+.nav-menu{
+    display: flex;
+    font-size: 18px;
+    margin: 0 10px;
 }
