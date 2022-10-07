@@ -52,6 +52,8 @@ align-items: center;
     padding-left: 1em;
     padding-right:2em;
 
+    z-index: 1;
+
 }
 
 .list1{
@@ -162,7 +164,10 @@ align-items: center;
     background-size: cover;
     width: 300px;
     height: 300px;
+
   }
+
+
 
   .swiper-slide img {
     display: block;
@@ -179,3 +184,54 @@ align-items: center;
 
   }
 
+  .the-joy{
+
+    font-family: ;
+    display: flex;
+    justify-content: center;
+    padding-left: 59%;
+    width: 30%;
+
+    font-size: 36px;
+  }
+  .carrusel{
+    padding-top: 5%;
+    display: flex;
+    justify-content: space-around;
+
+  }
+#img2{
+    margin-top: 80%;
+}
+
+#img3{
+    margin-top: 80%;
+}
+
+.section3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 700px;
+    background-image: url("./imagenes/Best_sellers1.png");
+
+    margin-top: 20%;
+
+    color: #fff;
+
+}
+
+.section5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 700px;
+    background-image: url("./imagenes/Last collection.png");
+
+    margin-top: 20%;
+
+    color: #fff;
+
+}
