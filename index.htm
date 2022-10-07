@@ -47,29 +47,55 @@
 
    <main>
    <section class="banner">
-    <img src="./imagenes/Banner.png">
-    <button><img src= "imagenes/shop_now.png"></button>
-    <h3>BELIEVE IN THE MAGIC OF SUNSHINE</h3>
+
+    <button class="banner__button"><img src= "imagenes/shop_now.png"></button>
+    <h3 class="banner__button__text">BELIEVE IN THE MAGIC OF SUNSHINE</h3>
    </section>
 
-   <section class="section1">
-
-    <img class="section1__line" src="./imagenes/linea1.png">
-    <h2 class="section1__line__title">New Arrival</h2>
-    <img class="section1__line__title__ellipse" src="./imagenes/Ellipse1.png">
    
-
-    <div class="section1__slider">
-        <img class="section1__slider__img1" src="./imagenes/imagen_carrusel1.png">
-        <img class="section1__slider__img2" src="./imagenes/imagen_carrusel2.png">
-        <img class="section1__slider__img3" src="./imagenes/imagen_carrusel3.png">
-    </div>
-
-    <img class="section1__sun" src="./imagenes/sol.png">
-
+  
+   <section class="section1">
+    
+    <h2 class="section1__title">New Arrival</h2>
+     <!-- <img class="section1__sun" src="./imagenes/sol.png"> -->
    </section>
 
-   <section class="section2">
+   <!-- Swiper -->
+  
+   <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="./imagenes/imagen_carrusel1 (1).png"/>
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+      </div>
+      <div class="swiper-slide">
+        <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <section class="section2">
     <h3>THE JOY OF HAPPY</h3>
    <h2>ACCIDENTS</h2>
     <img src="./imagenes/star.png">
@@ -85,6 +111,29 @@
     </div>
    
    </section>
+   
+   <div id="carrusel" >
+    <a href="#" id="home">
+        <img id='img1' src="./imagenes/hover1.png" alt="logo" width="540x" height="818px"
+onmouseover="onHover();" onmouseout="offHover();" />
+    </a>
+</div>
+
+<div id="carrusel" >
+    <a href="#" id="home">
+        <img id='img2' src="./imagenes/hover2.png" alt="logo" width="356.21px" height="536.34px"
+onmouseover="onHover2();" onmouseout="offHover2();" />
+    </a>
+</div>
+
+<div id="carrusel" >
+    <a href="#" id="home">
+        <img id='img3' src="./imagenes/hover3.png" alt="logo" width="383.86px" height="509.66px"
+onmouseover="onHover3();" onmouseout="offHover3();" />
+    </a>
+</div>
+
+
    
    <section class="section3">
     <img src="./imagenes/Best_sellers1.png" >
@@ -133,7 +182,9 @@
     <img src="./imagenes/degrade (1).png">
    </footer>
 
+   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
    <script src="./script.js" ></script>
+   
 </body>
 </html>
