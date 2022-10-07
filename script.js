@@ -49,6 +49,3 @@ function offHover3()
     $("#img3").attr('src', './imagenes/hover3.png');
 }
 
-let timer = setTimeout(function(hover1) {
-	console.log('Hello world!');
-}, 1000);
