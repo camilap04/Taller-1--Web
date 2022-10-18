@@ -38,7 +38,12 @@ align-items: center;
 
 z-index: 3;
 
+
+
 }
+
+
+
 .logo{
    /* position: absolute;
    height: 5%;
@@ -281,8 +286,6 @@ z-index: 3;
     height: 700px;
     background-image: url("./imagenes/Last collection.png");
 
-    margin-top: 20%;
-
     color: #fff;
 
 }
@@ -322,23 +325,30 @@ z-index: 3;
     .btn-secondary{
     background-color: transparent !important;
     border: none;
+   
   }
 
     #dropdownMenuButton{
     border: none;
     box-shadow: none;
-    color: #454544;
-  }
+    color: white
+    }
 
+  .dropdown{
+
+    padding-top: 9%;
+    font-size: 3%;
+   
+  }
 
   
 
   .marquee-container {
-    height: 30px;
+    height: 90px;
     overflow: hidden;
     line-height: 30px;
 
-    background-color: aquamarine;
+    background-color: rgba(255, 191, 155, 1)
   
    
   }
@@ -367,4 +377,16 @@ z-index: 3;
   }
   b {
     padding-left: 10px;
+  }
+
+  .span_seeking{
+    color: #fff;
+    padding-top: 2%;
+    margin-right: 6%;
+    margin-left:6%;
+    font-size: 40px;
+  }
+
+  .star_white{
+    margin-left: 7%;
   }
