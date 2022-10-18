@@ -172,7 +172,9 @@ align-items: center;
     margin-top: 80%;
     color: #fff;
     
+    
 }
+
 .section1__title{
     display: flex;
     margin: 1em;
@@ -281,3 +283,5 @@ align-items: center;
     color: #fff;
     font-size: 30px;
 }
+
+
