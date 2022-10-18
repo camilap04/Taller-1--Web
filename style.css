@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0%;
     box-sizing: border-box;
+    
 }
 body{
 
-font-family: 'Merriweather';
+font-family: 'Merriweather'!important;
 color: #454544;
 display: flex;
 min-height: 100vh;
@@ -32,6 +35,8 @@ padding-top:2em;
 
 justify-content: center;
 align-items: center;
+
+z-index: 3;
 
 }
 .logo{
@@ -64,7 +69,7 @@ align-items: center;
     padding-left: 1em;
     padding-right:2em;
 
-    z-index: 1;
+    z-index: 50;
 
 }
 
@@ -149,14 +154,21 @@ align-items: center;
 
     background-image: url("./imagenes/Banner.png");
     height: 800px;
+
+    position: relative;
+    z-index: 0;
+
+    margin-top: 7%;
 }
 .banner__button{
     display: flex;
 
     background:transparent;
     border: none;
-
+    margin-top:5%;
     max-height: 100%;
+
+    
 }
 .banner__button__text{
 
@@ -168,11 +180,20 @@ align-items: center;
 
     width:100%;
 
-    margin-left: 86%;
-    margin-top: 80%;
+   
     color: #fff;
     
+   position: absolute;
+    right: -43%;
+    bottom: -35%;
+
+   
     
+}
+
+.text_button{
+
+    width: 100%;
 }
 
 .section1__title{
@@ -297,3 +318,53 @@ align-items: center;
     opacity: 0;
   }
   
+
+    .btn-secondary{
+    background-color: transparent !important;
+    border: none;
+  }
+
+    #dropdownMenuButton{
+    border: none;
+    box-shadow: none;
+    color: #454544;
+  }
+
+
+  
+
+  .marquee-container {
+    height: 30px;
+    overflow: hidden;
+    line-height: 30px;
+
+    background-color: aquamarine;
+  
+   
+  }
+  
+  @keyframes marquee {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%
+    }
+  }
+
+  .marquee {
+    top: 0;
+    left: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee2 {
+    animation-delay: 15s;
+  }
+  b {
+    padding-left: 10px;
+  }
