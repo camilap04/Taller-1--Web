@@ -284,4 +284,16 @@ align-items: center;
     font-size: 30px;
 }
 
-
+#img1> img:last-of-type {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+  }
+  /* 
+   * Hide the last image on hover
+  */
+  #img1 > img:last-of-type {
+    opacity: 0;
+  }
+  

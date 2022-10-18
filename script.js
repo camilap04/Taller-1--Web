@@ -16,7 +16,7 @@ var swiper = new Swiper(".mySwiper", {
   });
 
 
-  function onHover()
+  function onHover() 
 {
     $("#img1").attr('src', './imagenes/kaitop-hover.png');
 }
@@ -41,7 +41,7 @@ function offHover2()
 
 function onHover3()
 {
-    $("#img3").attr('src', './imagenes/jasaitop-hover.png');
+    $("#img3").attr('src', './imagenes/wereketop-hover (1).png');
 }
 
 function offHover3()
