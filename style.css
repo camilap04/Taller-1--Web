@@ -158,7 +158,7 @@ z-index: 3;
     flex-direction: column;
 
     background-image: url("./imagenes/Banner.png");
-    height: 800px;
+    height: 900px;
 
     position: relative;
     z-index: 0;
@@ -190,7 +190,12 @@ z-index: 3;
     
    position: absolute;
     right: -43%;
-    bottom: -35%;
+    bottom: -2%;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.7em;
+    text-transform: uppercase;
 
    
     
