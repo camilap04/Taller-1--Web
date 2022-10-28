@@ -390,8 +390,84 @@ z-index: 3;
     margin-right: 6%;
     margin-left:6%;
     font-size: 40px;
+
   }
 
   .star_white{
     margin-left: 7%;
+  }
+
+  .filter-tops{
+
+    display: flex;
+    justify-content: space-around;
+    margin: 1%;
+    padding: 1%;
+    padding-top: 6%;
+  
+
+  }
+
+
+ .filter-tops-img{
+width: 540px;
+height: 810px;
+object-fit: cover;
+padding: 3%;
+ }
+
+ .filter-shirts{
+
+  display: flex;
+  justify-content: space-around;
+  margin: 1%;
+  padding: 1%;
+  padding-top: 6%;
+
+}
+
+.filter-shirts-img{
+  width: 540px;
+  height: 810px;
+  object-fit: cover;
+  padding: 3%;
+   }
+
+  .shirts-title{
+
+display: flex;
+justify-content: center;
+padding-top: 5%;
+
+  }
+
+  .tops-h1{
+
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    z-index: 1;
+    margin-top: 15%;
+    
+    }
+ 
+
+     .btn-secondary{
+    background-color: transparent !important;
+    border: black;
+   
+  }
+
+    #dropdownFilterButton{
+    border: none;
+    box-shadow: none;
+    color: black
+    }
+
+  .filters{
+
+    padding-top: 9%;
+    font-size: 3%;
+   
   }
