@@ -1,0 +1,34 @@
+.btn-secondary{
+    background-color: transparent !important;
+    border: none;
+   
+  }
+
+    #dropdownMenuButton{
+    border: none;
+    box-shadow: none;
+    color: white
+    }
+
+  .dropdown{
+
+    padding-top: 9%;
+    font-size: 3%;
+   
+  }
+
+  .wereke-details{
+
+    display: flex;
+    justify-content: center;
+    padding-top: 20%;
+    margin-bottom: 20%;
+  }
+
+  .swiper-wrapper{
+
+    display: flex;
+    justify-content: center;
+    height: 50%;
+  }
+

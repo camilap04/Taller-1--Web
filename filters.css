@@ -1,0 +1,34 @@
+
+    .btn-secondary{
+        background-color: transparent !important;
+        border: none;
+       
+      }
+    
+        #dropdownMenuButton{
+        border: none;
+        box-shadow: none;
+        color: black
+        }
+    
+      .dropdown{
+    
+        padding-top: 9%;
+        font-size: 3%;
+       
+      }
+      #dropdownMenuButton1{
+
+        border: none;
+        box-shadow: none;
+        color: white;
+        }
+
+        #dropdownMenuButton2{
+
+            border: none;
+            box-shadow: none;
+            color: white;
+            }
+          
+      

@@ -49,5 +49,3 @@ function offHover3()
     $("#img3").attr('src', './imagenes/wereketop.png');
 }
 
-
-
