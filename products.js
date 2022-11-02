@@ -218,3 +218,14 @@ let prodcusts = [
 
 
 ]
+
+function displayProdcuts(){
+
+    prodcusts.array.forEach(product => {
+        
+
+        const card = document.createElement ('article')
+        card.classList.add('card')
+    });
+
+}
