@@ -1,10 +1,10 @@
-let prodcusts = [
+const prodcusts = [
 
     {
 
         id: 1,
 
-            imgUrl: "  https://cdn.shopify.com/s/files/1/0624/7081/5965/products/image00014-1_540x.jpg?v=1642606631" ,
+            imgUrl: "https://cdn.shopify.com/s/files/1/0624/7081/5965/products/DSC04180_a05a334f-0973-433d-be70-1c192e67bc78_720x.jpg?v=1657168486" ,
             name : "WAKERE TOP" ,
             price : "130.000",
             description: "Top wayu tejido a mano" ,
@@ -219,13 +219,61 @@ let prodcusts = [
 
 ]
 
-function displayProdcuts(){
+const prodcustSection = document.getElementById('products-container')
 
-    prodcusts.array.forEach(product => {
+function displayProducts(){
+
+
+    prodcusts.forEach(product => {
         
 
         const card = document.createElement ('article')
         card.classList.add('card')
+        card.innerHTML = `<div class="card-image">
+        <img class="card-inner-image" src=${product.imgUrl}>
+       
+      </div>
+      <div class="card-content">
+        <span class="card-title"> ${product.name}</span>
+        <p>El precio de este producto es: ${product.price}</p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>`
+
+
+      prodcustSection.append(card)
+
     });
 
+  
+
 }
+
+displayProducts();
+
+
+const filters = document.querySelector('.filters');
+
+filters.addEventListener('change',function(){
+    if (filters.order.value) {
+        switch (filters.order.value) {
+          case 'price_asc':
+            prodcusts = prodcusts.orderBy('price', 'asc');
+            break;
+          case 'price_desc':
+            prodcusts = prodcusts.orderBy('price', 'desc');
+            break;
+          case 'alpha_asc':
+            
+            prodcusts = prodcusts.orderBy('name', 'asc');
+            break;
+          case 'alpha_asc':
+           
+            prodcusts = prodcusts.orderBy('date', 'desc');
+            break;
+        }
+}});
+
+
+ 
