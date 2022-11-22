@@ -67,7 +67,7 @@ ul {
   width: -moz-fit-content;
   width: fit-content;
   height: 25px;
-  padding-left: 80%;
+  padding-left: 70%;
 }
 
 .icons__item {
@@ -97,7 +97,7 @@ ul {
 
 .registration__title {
   font-family: "Marcellus", serif;
-  color: #340C0C;
+  color: rgb(239, 129, 147);
   font-size: 1.8em;
   margin-bottom: 40px;
 }
@@ -128,7 +128,7 @@ ul {
   text-decoration: underline;
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
-  color: pink;
+  color: rgb(239, 129, 147);
   font-size: 1em;
   margin: 15px 0;
   background-color: transparent;
@@ -142,9 +142,9 @@ ul {
 .registration__submit {
   font-family: "Outfit", sans-serif;
   font-weight: lighter;
-  color: #EEC9AF;
-  background-color: #5C302F;
-  border: 2px solid #5C302F;
+  color: white;
+  background-color: rgb(239, 129, 147);
+  border: none;
   padding: 10px 40px;
   width: 35%;
   margin-top: 10px;
@@ -153,8 +153,8 @@ ul {
 }
 
 .registration__submit:hover {
-  border: 2px solid #340C0C;
-  background-color: #340C0C;
+  border: 2px solid rgb(239, 97, 121);
+  background-color: rgb(239, 97, 121);
   font-weight: normal;
 }
 

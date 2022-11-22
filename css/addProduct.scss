@@ -1,6 +1,7 @@
-$mainColor: #340C0C;
+$mainColor: pink;;
 $lightColor: #FFF3EC;
-$secondaryColor: #5C302F;
+$secondaryColor: pink;
+
 $accentColor: #EEC9AF;
 $sansFont: 'Outfit', sans-serif;
 $serifFont: 'Marcellus', serif;
@@ -31,12 +32,6 @@ ul {
     color: $theme;
 }
 
-@mixin hover () {
-    background-color: $secondaryColor;
-    color: $accentColor;
-    font-weight: normal;
-}
-
 .flex {
     display: flex;
 }
@@ -49,6 +44,7 @@ ul {
     position: fixed;
     z-index: 10;
     width: 100%;
+    @include sansStyle($theme: $lightColor);
 }
 
 .menu {
@@ -59,18 +55,9 @@ ul {
     list-style: none;
 
     &__item {
-        margin-top: 3px;
         margin-left: 40px;
         color: #FFF3EC;
         @include sansStyle($theme: $lightColor);
-        text-align: center;
-
-        &:hover {
-            transform: scale(1.1);
-            font-weight: normal;
-            cursor: pointer;
-            color: $accentColor;
-        }
     }
 }
 
@@ -85,16 +72,12 @@ ul {
     margin-right: 30px;
     object-fit: cover;
 
-    &:hover {
-        transform: scale(1.2);
-    }
-
     &--menu {
         display: none;
     }
 }
 
-.registration {
+.products {
     position: relative;
     top: 150px;
     margin-left: 50px;
@@ -108,8 +91,13 @@ ul {
     &__label {
         @include sansStyle();
         font-weight: normal;
+
+        &--price {
+            display: block;
+            margin-top: 18px;
+        }
     }
-    
+
     &__input {
         display: block;
         @include sansStyle();
@@ -120,19 +108,41 @@ ul {
         height: 40px;
         margin-top: 5px;
         margin-bottom: 18px;
+
+        &--description {
+            height: 70px;
+        }
+
+        &--color {
+            width: 30%;
+        }
     }
 
-    &__registration {
+    &__upload {
         display: block;
-        text-decoration: underline;
-        @include sansStyle($theme: $secondaryColor);
-        font-size: 1em;
-        margin: 15px 0;
-        background-color: transparent;
-        border: none;
+        margin: 8px 0;
 
-        &--hide {
-            display: none;
+        &::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        &::before {
+            content: 'Upload product images';
+            @include sansStyle();
+            color: $mainColor;
+            display: inline-block;
+            background: -webkit-linear-gradient(top, #ffffff, #fff3ece0);
+            border: 1px solid $secondaryColor;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: none;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        &:hover::before {
+            background: $mainColor;
+            color: $accentColor;
         }
     }
 
@@ -142,9 +152,9 @@ ul {
         border: 2px solid $secondaryColor;
         padding: 10px 40px;
         width: 35%;
-        margin-top: 10px;
+        margin-top: 20px;
         font-weight: lighter;
-        cursor: pointer;
+        display: block;
 
         &:hover {
             border: 2px solid #340C0C;
@@ -153,33 +163,62 @@ ul {
         }
     }
 
-    &__background {
-        position: absolute;
-        top: -100px;
-        right: 0px;
-        width: 58%;
-    }
-
-    &__decor {
-        position: absolute;
-        top: -90px;
-        right: 56%;
-        height: 300px;
-    }
 }
 
-.signup {
-    display: none;
-
-    &--show {
-        display: block;
-    }
+.select{
+    display: flex;
 }
 
-.login {
-    display: block;
+#colorBox {
+    display: flex;
+    margin: 7px 0 0 15px;
+    border: white solid 2px;
+    box-shadow: 0 0 0 2px $mainColor;
+    height: 36px;
+    width: 4%;
+}
 
-    &--hide {
-        display: none;
-    }
+.background {
+    position: absolute;
+    top: -100px;
+    right: 0px;
+    width: 48%;
+}
+
+//Star rating
+.rating {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.rating li {
+    list-style-type: none
+}
+
+.rating-item {
+    border: 1px solid #fff;
+    cursor: pointer;
+    font-size:2em;
+    color: $secondaryColor;
+}
+
+/* initial: make all stars full */
+.rating-item::before {
+    content: "\2605";
+}
+
+/* make until the clicked star (the rest) empty */
+.rating-item.active ~ .rating-item::before {
+    content: "\2606";
+}
+
+/* on hover make all full */
+.rating:hover .rating-item::before {
+    content: "\2605";
+}
+
+/* make until the hovered (the rest) empty */
+.rating-item:hover ~ .rating-item::before {
+    content: "\2606";
 }

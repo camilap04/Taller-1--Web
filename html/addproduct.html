@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/addProduct.css">
+    <link rel="stylesheet" href="../css/addProduct-mediaqueries.css">
+</head>
+<body>
+    <header class="header flex">
+        <div class="menu flex">
+            
+            <nav>
+                <ul class="list flex">
+                    <li class="list__item sans">ADD PRODUCT</li>
+                </ul>
+            </nav>
+            <a href="../index.html"><img id="logo" src="../imagenes/Sunset the Journey.png" alt="Logo"></a>
+        </div>
+        <div class="icons">
+            <img  class="icons__item" src="../images/profile.png" alt="Profile">
+            <img  class="icons__item" src="../images/search.png" alt="Search">
+            <img src="../images/menu.png" alt="Menu" class="icons__item icons__item--menu">
+        </div>
+    </header>
+
+    <section class="products">
+        <h2 class="products__title">Add product</h2>
+        <form action="" id="productsForm">
+            <label for="name" class="products__label">NAME</label>
+            <input type="text" name="name" placeholder="Product name" class="products__input" id="name">
+
+            <label for="category" class="products__label">CATEGORY</label>
+            <select name="category" id="category" class="products__input">
+                <option hidden disabled selected value>Select an option... </option>
+                <option value="face">Tops</option>
+                <option value="cheek">T-shirts</option>
+                <option value="eyes">Skirts</option>
+                <option value="lips">Shorts</option>
+            </select>
+
+            <label for="price" class="products__label products__label--price">PRICE</label>
+            <input type="number" name="price" placeholder="Product price" class="products__input" id="price">
+
+            <label for="description" class="products__label">DESCRIPTION</label>
+            <textarea name="description" class="products__input products__input--description" id="description" placeholder="Describe the product here..."></textarea>
+
+            <label for="stock" class="products__label">STOCK</label>
+            <input type="number" name="stock" placeholder="Product stock" class="products__input" id="stock">
+
+            <label for="color" class="products__label">COLOR</label>
+            <div class="select">
+                <select name="color" id="color" class="products__input products__input--color">
+                    <option hidden disabled selected value>Select an option... </option>
+                </select>
+                <div id="colorBox"></div>
+            </div>
+
+            <div>
+                <h4 class="products__label">RATING</h4>
+                <ul class="rating">
+                    <li class="rating-item" data-rate="1"></li>
+                    <li class="rating-item" data-rate="2"></li>
+                    <li class="rating-item active" data-rate="3"></li>
+                    <li class="rating-item" data-rate="4"></li>
+                    <li class="rating-item" data-rate="5"></li>
+                </ul>
+            </div>
+            
+            <label for="images" class="products__label">IMAGES</label>
+            <input type="file" name="images" id="images" class="products__upload" multiple>
+
+            <input type="submit" value="ADD PRODUCT" class="products__submit">
+        </form>
+    </section>
+
+    <figure class="background">
+        <img src="../images/add_product_bg.jpg" alt="Add product background">
+    </figure>
+
+    <script src="../js/addProduct.js" type="module"></script>
+</body>
+</html>
