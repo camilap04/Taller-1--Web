@@ -1,4 +1,4 @@
-import { db, auth} from "./app";
+/* import { db, auth} from "./app";
 import { onAuthStateChanged } from "firebase/auth";
 import { login, createUser, addUserToDatabase } from "./functions/auth";
 import { getMyLocalBag } from "./utils";
@@ -90,3 +90,4 @@ onAuthStateChanged(auth, async (user) => {
     window.location.href = "./index.html";
   } 
 });
+ */

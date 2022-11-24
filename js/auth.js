@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+/* import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
 async function login(auth, email, password) {
@@ -37,4 +37,4 @@ export {
     login, 
     createUser, 
     addUserToDatabase
-}
+} */

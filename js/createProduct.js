@@ -1,4 +1,4 @@
-import { addDoc, collection } from "firebase/firestore";
+/* import { addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 async function addProduct (db, product) {
@@ -27,4 +27,4 @@ async function uploadImages(storage, images = []) {
 export {
     addProduct,
     uploadImages
-}
+} */

@@ -1,4 +1,4 @@
-import { collection, getDocs, doc, getDoc} from "firebase/firestore";
+/* import { collection, getDocs, doc, getDoc} from "firebase/firestore";
 
 async function getAllProducts(db) {
     const collectionRef = collection(db, "products");
@@ -31,4 +31,4 @@ async function getSingleProduct(db, id) {
 export {
     getAllProducts,
     getSingleProduct
-}
+} */

@@ -1,4 +1,4 @@
-//Import necessary functions
+/* //Import necessary functions
 import { db, auth } from "./app";
 import { onAuthStateChanged } from "firebase/auth";
 import { createFirebaseBag, getFirebaseBag } from "./functions/bag";
@@ -223,3 +223,4 @@ onAuthStateChanged(auth, async (user) => {
     loadProducts();
 });
 
+ */

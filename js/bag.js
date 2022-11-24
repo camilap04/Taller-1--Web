@@ -1,4 +1,4 @@
-import { setDoc, doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
+/* import { setDoc, doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 
 async function createFirebaseBag(db, userId, bag) {
     try {
@@ -40,4 +40,4 @@ export {
     getFirebaseBag,
     deleteFromBag,
     changeCounter
-}
+} */

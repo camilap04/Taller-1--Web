@@ -1,4 +1,4 @@
-import { setDoc, doc } from "firebase/firestore";
+/* import { setDoc, doc } from "firebase/firestore";
 
 async function addOrder (db, order, userId) {
     try {
@@ -13,4 +13,4 @@ async function addOrder (db, order, userId) {
 
 export {
     addOrder
-}
+} */
