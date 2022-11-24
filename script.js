@@ -50,4 +50,19 @@ function offHover3()
 }
 
 
+const addproduct = document.querySelector(".add-product");
+const showmodal = document.querySelector(".add-product-modal");
+const modalcontainer = document.querySelector(".add-product-modal-container");
+modalcontainer.addEventListener("click", () =>{
+
+
+   modalcontainer.classList.toggle("invisible");
+
+})
+addproduct.addEventListener("click",()=>{ 
+ modalcontainer.classList.toggle("invisible")   
+
+})
+
+
 

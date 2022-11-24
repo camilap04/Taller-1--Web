@@ -10,6 +10,13 @@
         <enlace rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
         <enlace href="https: //fonts.googleapis.com/css2? family= Merriweather & display=swap" rel="hoja de estilo">
             <!-- CSS only -->
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="../css/addProduct.css">
+            <link rel="stylesheet" href="../css/addProduct-mediaqueries.css">
            
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -77,20 +84,14 @@
         <div class="nav-wrapper"> 
             <ul class="nav__items">
                 <li><input class="nav-seacrh" type="text" placeholder="Search.."></li>
-                <li><a href="">Sign in</a></li>
+                <li><a href="./html/register.html">Sign in</a></li>
                 <li><button class = "nav-button"><img class="nav-shop" src="./imagenes/carrito (1).png" ></button></li>
+                <li><button class = "nav-button add-product ">+</button></li>
+                
             </ul>
             </div>
             
     </nav>
-
-  
-    
-   
-
-
-
-
 
         <!-- <nav class="nav #ffebee red lighten-5"> 
         
@@ -203,8 +204,9 @@
    <main>
    <section class="banner">
 
-    <button class="banner__button"><img src= "imagenes/shop_now.png"></button>
-
+  
+    <button class="banner__button"><img src="imagenes/shop_now.png"><a href="./Paginas/tops.html"></a></img></button>
+    
     <h3 class="banner__button__text">BELIEVE IN THE MAGIC OF SUNSHINE</h3>
     
    </section>
@@ -401,6 +403,69 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
       </div>
     </div>
   </footer>
+
+  <div class="add-product-modal-container"> 
+  <div class="add-product-modal">  
+    
+    <section class="products">
+        <h2 class="products__title">Add product</h2>
+        <form action="" id="productsForm">
+            <label for="name" class="products__label">NAME</label>
+            <input type="text" name="name" placeholder="Product name" class="products__input" id="name">
+
+            <label for="category" class="products__label">CATEGORY</label>
+            <select name="category" id="category" class="products__input">
+                <option hidden disabled selected value>Select an option... </option>
+                <option value="face">Tops</option>
+                <option value="cheek">T-shirts</option>
+                <option value="eyes">Skirts</option>
+                <option value="lips">Shorts</option>
+            </select>
+
+            <label for="price" class="products__label products__label--price">PRICE</label>
+            <input type="number" name="price" placeholder="Product price" class="products__input" id="price">
+
+            <label for="description" class="products__label">DESCRIPTION</label>
+            <textarea name="description" class="products__input products__input--description" id="description" placeholder="Describe the product here..."></textarea>
+
+            <label for="stock" class="products__label">STOCK</label>
+            <input type="number" name="stock" placeholder="Product stock" class="products__input" id="stock">
+
+            <label for="color" class="products__label">COLOR</label>
+            <div class="select">
+                <select name="color" id="color" class="products__input products__input--color">
+                    <option hidden disabled selected value>Select an option... </option>
+                </select>
+                <div id="colorBox"></div>
+            </div>
+
+            <div>
+                <h4 class="products__label">RATING</h4>
+                <ul class="rating">
+                    <li class="rating-item" data-rate="1"></li>
+                    <li class="rating-item" data-rate="2"></li>
+                    <li class="rating-item active" data-rate="3"></li>
+                    <li class="rating-item" data-rate="4"></li>
+                    <li class="rating-item" data-rate="5"></li>
+                </ul>
+            </div>
+            
+            <label for="images" class="products__label">IMAGES</label>
+            <input type="file" name="images" id="images" class="products__upload" multiple>
+
+            <input type="submit" value="ADD PRODUCT" class="products__submit">
+        </form>
+
+    </section>
+
+    <figure class="background">
+        <img src="../images/add_product_bg.jpg" alt="Add product background">
+    </figure>
+
+    <script src="../js/addProduct.js" type="module"></script>
+</div>
+</div>
+
    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
    <script src="./script.js" ></script>
