@@ -31,4 +31,17 @@
             color: white;
             }
           
-      
+            .filterOpt{
+              border: 1px solid black;
+              display: flex;
+              width: 20%;
+            }
+            
+            .filterOpt:hover{
+              background-color: rgb(175, 175, 175);
+              cursor: pointer;
+            }
+            
+            .disabled {
+              display: none;
+            }

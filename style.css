@@ -451,53 +451,26 @@ padding-top: 5%;
     
     }
  
-    #products-container{
+    .productsContainer{
       width: 100%;
       background-color: #fff;
       padding: 3%;
-
-      padding-top: 15%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-
-      
     }
 
-   /*  #products-container2{
-      padding: 2%;
-      display: flex;
-      justify-content: space-around;
-    }
+  .card2{
+    width: 30%;
+    margin: 10px;
+  }
 
-    #products-container3{
-      padding: 2%;
-      display: flex;
-      justify-content: space-around;
-    }
-
-
-    #products-container4{
-      padding: 2%;
-      display: flex;
-      justify-content: space-around;
-    }
-
-
-    #products-container5{
-      padding: 2%;
-      display: flex;
-      justify-content: space-around;
-    }
- */
-
-  .card{
-    
-    width: 25%;
+  .card-image{
+    width: 10%;
   }
 
   .card-inner-image{
-    width: 100%;
+    width: 25%;
     height: 100%;
     object-fit: cover;
   }
