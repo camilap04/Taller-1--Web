@@ -65,4 +65,20 @@ addproduct.addEventListener("click",()=>{
 })
 
 
+const bag = document.querySelector(".bag");
+const showbag = document.querySelector(".bag-modal");
+const bagcontainer = document.querySelector(".bag-modal-container");
+modalcontainerbag.addEventListener("click", () =>{
+
+
+   modalcontainerbag.classList.toggle("invisible");
+
+})
+addproduct.addEventListener("click",()=>{ 
+ modalcontainerbag.classList.toggle("invisible")   
+
+})
+
+
+
 

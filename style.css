@@ -718,5 +718,25 @@ padding-top: 5%;
     width: 100%;
     height: 129%;
     top: 0;
-
+    z-index: 50;
   }
+
+  .bag-modal{
+    position:absolute; 
+    width:37%;
+    height: 70%; 
+    top: 19%;
+    background:white; 
+    right: 0%;
+    overflow-y: scroll;
+    
+    }
+  
+    .bag-modal-container{
+      background: rgba(0, 0, 0, 0.566);
+      position: absolute;
+      width: 100%;
+      height: 129%;
+      top: 0;
+      z-index: 200;
+    }
