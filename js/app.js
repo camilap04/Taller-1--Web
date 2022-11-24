@@ -21,18 +21,19 @@
  const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function getProducts() {
+async function getUsers() {
   const usersCol = collection(db, 'Usuarios');
   const usersSnapshot = await getDocs(usersCol);
   const usersList = usersSnapshot.docs.map(doc => doc.data());
-  console.log(usersList);
+  return usersList
 }
 
-async function getUsers() {
-  const productsCol = collection(db, 'Productos');
+async function getProducts() {
+    const productsCol = collection(db, 'Productos');
   const productsSnapshot = await getDocs(productsCol);
   const productsList = productsSnapshot.docs.map(doc => doc.data());
-  console.log(productsList);
+  return await productsList
+  
 }
 
 async function createUser(nombre) {

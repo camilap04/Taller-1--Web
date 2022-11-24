@@ -306,29 +306,30 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
     </div>
   </footer>
 
-  <div class="add-product-modal-container"> 
+<div class="add-product-modal-container invisible"> 
+  <div class="add-product-modal-background"></div>
   <div class="add-product-modal">  
     
     <section class="products">
         <h2 class="products__title">Add product</h2>
         <form action="" id="productsForm">
             <label for="name" class="products__label">NAME</label>
-            <input type="text" name="name" placeholder="Product name" class="products__input" id="name">
+            <input type="text" name="name" placeholder="Product name" class="products__input productName" id="name">
 
             <label for="category" class="products__label">CATEGORY</label>
-            <select name="category" id="category" class="products__input">
+            <select name="category" id="category" class="products__input productCategory">
                 <option hidden disabled selected value>Select an option... </option>
-                <option value="face">Tops</option>
-                <option value="cheek">T-shirts</option>
-                <option value="eyes">Skirts</option>
-                <option value="lips">Shorts</option>
+                <option value="Tops">Tops</option>
+                <option value="T-shirts">T-shirts</option>
+                <option value="Skirts">Skirts</option>
+                <option value="Shorts">Shorts</option>
             </select>
 
             <label for="price" class="products__label products__label--price">PRICE</label>
-            <input type="number" name="price" placeholder="Product price" class="products__input" id="price">
+            <input type="number" name="price" placeholder="Product price" class="products__input productPrice" id="price">
 
             <label for="description" class="products__label">DESCRIPTION</label>
-            <textarea name="description" class="products__input products__input--description" id="description" placeholder="Describe the product here..."></textarea>
+            <textarea name="description" class="products__input products__input--description productDescription" id="description" placeholder="Describe the product here..."></textarea>
 
             <label for="stock" class="products__label">STOCK</label>
             <input type="number" name="stock" placeholder="Product stock" class="products__input" id="stock">
@@ -360,15 +361,12 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
 
     </section>
 
-    <figure class="background">
-        <img src="../images/add_product_bg.jpg" alt="Add product background">
-    </figure>
-
-    <script src="../js/addProduct.js" type="module"></script>
+  </div>
 </div>
 
 <!-- Bag container -->
-<div class="bag-modal-container"> 
+<div class="bag-modal-container invisible"> 
+  <div class="bag-modal-background"></div>
   <div class="bag-modal">  
  
 
@@ -410,5 +408,6 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
 
 <script type='module' src="products.js"></script>
 <script type='module' src="./js/app.js"></script>
+<script type='module' src="./js/createProduct.js"></script>
 </body>
 </html>

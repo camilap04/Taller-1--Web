@@ -247,8 +247,6 @@ z-index: 5s;
   }
 
   .the-joy{
-
-    font-family: ;
     display: flex;
     justify-content: center;
     padding-left: 59%;
@@ -709,16 +707,16 @@ padding-top: 5%;
   background:white; 
   right: 0%;
   overflow-y: scroll;
-  
+  z-index: 20;
   }
 
-  .add-product-modal-container{
+  .add-product-modal-background{
     background: rgba(0, 0, 0, 0.566);
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: 129%;
+    height: 100%;
     top: 0;
-    z-index: 50;
+    z-index: 10;
   }
 
   .bag-modal{
@@ -729,14 +727,14 @@ padding-top: 5%;
     background:white; 
     right: 0%;
     overflow-y: scroll;
-    
+      z-index: 20;
     }
   
-    .bag-modal-container{
+    .bag-modal-background{
       background: rgba(0, 0, 0, 0.566);
       position: absolute;
       width: 100%;
       height: 129%;
       top: 0;
-      z-index: 200;
+      z-index: 10;
     }

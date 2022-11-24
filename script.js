@@ -51,32 +51,26 @@ function offHover3()
 
 
 const addproduct = document.querySelector(".add-product");
-const showmodal = document.querySelector(".add-product-modal");
+const modalBackground = document.querySelector(".add-product-modal-background");
 const modalcontainer = document.querySelector(".add-product-modal-container");
-modalcontainer.addEventListener("click", () =>{
-
-
+modalBackground.addEventListener("click", () =>{
    modalcontainer.classList.toggle("invisible");
-
 })
 addproduct.addEventListener("click",()=>{ 
  modalcontainer.classList.toggle("invisible")   
-
 })
 
 
 const bag = document.querySelector(".bag");
-const showbag = document.querySelector(".bag-modal");
+const bagBackground = document.querySelector(".bag-modal-background");
 const bagcontainer = document.querySelector(".bag-modal-container");
-modalcontainerbag.addEventListener("click", () =>{
+bagBackground.addEventListener("click", () =>{
 
-
-   modalcontainerbag.classList.toggle("invisible");
+    bagcontainer.classList.toggle("invisible");
 
 })
-addproduct.addEventListener("click",()=>{ 
- modalcontainerbag.classList.toggle("invisible")   
-
+bag.addEventListener("click",()=>{ 
+    bagcontainer.classList.toggle("invisible")   
 })
 
 

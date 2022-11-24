@@ -245,11 +245,7 @@ function displayProducts(){
       prodcustSection.append(card)
 
     });
-
-  
-
 }
-
 displayProducts();
 
 
