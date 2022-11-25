@@ -453,17 +453,16 @@ padding-top: 5%;
  
     .productsContainer{
       width: 100%;
-      background-color: #fff;
-      padding: 3%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      
     }
 
-  .card2{
+  .card{
     width: 20%;
     margin: 10px;
-    border: 1px solid black;
+    border: 10px solid red;
   }
   .card-content{
     display: flex;
@@ -471,7 +470,7 @@ padding-top: 5%;
   }
 
   .card-image{
-    width: 10%;
+    width: 100%;
   }
 
   .card-inner-image{
@@ -716,3 +715,7 @@ padding-top: 5%;
       top: 0;
       z-index: 10;
     }
+
+  .dropdown-toggle2{
+    color: white;
+  }
