@@ -38,7 +38,6 @@ function offHover2()
     
 }
 
-
 function onHover3()
 {
     $("#img3").attr('src', './imagenes/wereketop-hover (1).png');
