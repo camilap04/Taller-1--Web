@@ -325,18 +325,24 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
                 <option value="Shorts">Shorts</option>
             </select>
 
+            <label for="category" class="products__label">COLLECTION</label>
+            <select name="category" id="category" class="products__input productCategory">
+                <option hidden disabled selected value>Select an option... </option>
+                <option value="Tops">The joy of happy accidents</option>
+                <option value="T-shirts">Summer love</option>
+                <option value="Skirts">Islas de los sueños</option>
+                <option value="Shorts">Siempre verano</option>
+            </select>
+
             <label for="price" class="products__label products__label--price">PRICE</label>
             <input type="number" name="price" placeholder="Product price" class="products__input productPrice" id="price">
 
             <label for="description" class="products__label">DESCRIPTION</label>
             <textarea name="description" class="products__input products__input--description productDescription" id="description" placeholder="Describe the product here..."></textarea>
 
-            <label for="stock" class="products__label">STOCK</label>
-            <input type="number" name="stock" placeholder="Product stock" class="products__input" id="stock">
+            
 
-            <label for="color" class="products__label">COLOR</label>
-            <div class="select">
-                <select name="color" id="color" class="products__input products__input--color">
+            
                     <option hidden disabled selected value>Select an option... </option>
                 </select>
                 <div id="colorBox"></div>
