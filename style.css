@@ -461,8 +461,13 @@ padding-top: 5%;
     }
 
   .card2{
-    width: 30%;
+    width: 20%;
     margin: 10px;
+    border: 1px solid black;
+  }
+  .card-content{
+    display: flex;
+    flex-direction: column;
   }
 
   .card-image{

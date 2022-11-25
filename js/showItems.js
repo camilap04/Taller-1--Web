@@ -7,6 +7,7 @@ async function displayProducts(){
     console.log(products);    
 
     products.forEach(product => {
+        console.log(product.price);
         const card = document.createElement ('article')
         card.classList.add('card')
         card.innerHTML = `<div class="card-image">
@@ -20,7 +21,6 @@ async function displayProducts(){
       <div class="card-action">
         <a href="#">This is a link</a>
       </div>`
-
 
       productsSection.append(card)
     });
