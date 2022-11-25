@@ -3,11 +3,9 @@ import {getProducts} from './app.js'
 const productsSection = document.querySelector('.productsContainer')
 var products = await getProducts()
 
-async function displayProducts(){
-    console.log(products);    
+async function displayProducts(){  
 
     products.forEach(product => {
-        console.log(product.price);
         const card = document.createElement ('article')
         card.classList.add('card')
         card.innerHTML = `<div class="card-image">
@@ -78,7 +76,6 @@ const handleSetFilter = () => {
 }
 
 const handleSetItemsFiltered = () => {
-    console.log(filter);
     switch (filter) {
         case 'Alphabetically, A-Z':
             filteredProducts = products.sort(function(a, b){
@@ -113,7 +110,6 @@ const handleSetItemsFiltered = () => {
 }
 
 const handleShowProducts = (filteredProducts) =>{
-    console.log(productsContainer);
     productsContainer.innerHTML = ``
     for (let index = 0; index < filteredProducts.length; index++) {        
         productsContainer.innerHTML += `
