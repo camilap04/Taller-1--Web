@@ -53,10 +53,10 @@ const addproduct = document.querySelector(".add-product");
 const modalBackground = document.querySelector(".add-product-modal-background");
 const modalcontainer = document.querySelector(".add-product-modal-container");
 modalBackground.addEventListener("click", () =>{
-   modalcontainer.classList.toggle("invisible");
+    modalcontainer.classList.toggle("invisible");
 })
 addproduct.addEventListener("click",()=>{ 
- modalcontainer.classList.toggle("invisible")   
+    modalcontainer.classList.toggle("invisible")   
 })
 
 
@@ -73,5 +73,24 @@ bag.addEventListener("click",()=>{
 })
 
 
+const login = document.querySelector(".logIn");
+const loginBackground = document.querySelector(".logIn-modal-background");
+const loginContainer = document.querySelector(".logIn-modal-container");
+loginBackground.addEventListener("click", () =>{
+    loginContainer.classList.toggle("invisible");
+})
+login.addEventListener("click",()=>{ 
+    loginContainer.classList.toggle("invisible")   
+})
+
+const register = document.querySelector(".register");
+const registerBackground = document.querySelector(".register-modal-background");
+const registerContainer = document.querySelector(".register-modal-container");
+registerBackground.addEventListener("click", () =>{
+    registerContainer.classList.toggle("invisible");
+})
+register.addEventListener("click",()=>{ 
+    registerContainer.classList.toggle("invisible")   
+})
 
 

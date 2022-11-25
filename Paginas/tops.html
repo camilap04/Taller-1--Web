@@ -87,7 +87,8 @@
         <div class="nav-wrapper"> 
             <ul class="nav__items">
                 <li><input class="nav-seacrh" type="text" placeholder="Search.."></li>
-                <li><a href="./html/register.html">Sign in</a></li>
+                <li><span class="register auth">Register</span></li>
+                <li><span class="logIn auth">Log in</span></li>
                 <li><button class = "nav-button bag"><img class="nav-shop" src="../imagenes/carrito (1).png" ></button></li>
                 <li><button class = "nav-button add-product dropdown-toggle2">Add product</button></li>
                 
@@ -101,20 +102,9 @@
 
   <main>
 
-    <section>
-
       <h1 class="tops-h1">Tops</h1>
 
-      
-          
-            
-              
-            
-
-
-    </section>
-
-    <div class="dropDown2Btn">Filtros</div>
+    <span class="dropDown2Btn">Filtros</span>
     <div class="dropDown2"></div>
     <section class="productsContainer"> </section>
 
@@ -257,6 +247,36 @@
     </div>
   
     </div>
+
+  <div class="logIn-modal-container invisible"> 
+    <div class="logIn-modal-background"></div>
+    <div class="logIn-modal">
+      <div class="inputLogin">
+        <span>Correo:</span>
+        <input type="text" name="" id="">
+      </div>
+      <div class="inputLogin">
+        <span>Contraseña:</span>
+        <input type="text" name="" id="">
+      </div>
+      <button class="loginBtn">Logearse</button>
+    </div>
+  </div>
+
+  <div class="register-modal-container invisible"> 
+    <div class="register-modal-background"></div>
+    <div class="register-modal">
+      <div class="inputRegister">
+        <span>Correo:</span>
+        <input type="text" name="" id="">
+      </div>
+      <div class="inputRegister">
+        <span>Contraseña:</span>
+        <input type="text" name="" id="">
+      </div>
+      <button class="registerBtn">Registrarse</button>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
