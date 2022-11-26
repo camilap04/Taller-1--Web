@@ -88,7 +88,7 @@
                 <li><span class="register auth">Register</span></li>
                 <li><span class="logIn auth">Log in</span></li>
                 <li><span class="aboutUsBtn">Log out</span> </li>
-                <li><button class = "nav-button bag"><img class="nav-shop" src="../imagenes/carrito (1).png" ></button></li>
+                <li><button class = "nav-button bag shoppingCart invisible"><img class="nav-shop" src="../imagenes/carrito (1).png" ></button></li>
                 <li><button class = "nav-button add-product dropdown-toggle2">Add product</button></li>
             </ul>
             </div>
@@ -342,7 +342,7 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
   
     <section class="container">
         <h2 class="container__title">Shopping bag</h2>
-        <ul class="bag" id="bagSection"></ul>
+        <div class="bagItems" id="bagSection"></div>
         <div class="total">
             <div class="total__first">
                 <h2 class="total__title">TOTAL:</h2>
@@ -385,9 +385,14 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
         <input class="registerEmail" type="text" name="" id="">
       </div>
       <div class="inputRegister">
-        <span>Contraseña:</span>
-        <input class="registerPassword"type="text" name="" id="">
+        <input class="registerAdmin" type="checkbox" name="" id="">
+        <span>Admin?</span>
       </div>
+      <div class="inputRegister">
+        <span>Contraseña:</span>
+        <input class="registerPassword" type="text" name="" id="">
+      </div>
+      
       <button class="registerBtn">Registrarse</button>
     </div>
   </div>

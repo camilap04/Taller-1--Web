@@ -17,12 +17,37 @@
    
   }
 
-  .wereke-details{
+  .productDetail{
+    padding-top: 10%;
+  }
 
+  .details-wereke{
+    width: 80%;
+    margin: auto;
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding-top: 20%;
-    margin-bottom: 20%;
+    margin-bottom: 30px;
+  }
+
+  
+  .wereke-top{
+    width: 40%;
+  }
+    
+  .wereke-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+  }
+
+  .wereke-details h4{
+    margin-top: 50px;
+  }
+
+  .wereke-details div{
+    margin-top: 50px;
   }
 
   .swiper-wrapper{
@@ -30,12 +55,6 @@
     display: flex;
     justify-content: center;
     height: 50%;
-  }
-
-
-  .wereke-top{
-  padding-top: 15%;
-  padding-left: 10%;
   }
 
 

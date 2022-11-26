@@ -814,3 +814,41 @@ padding-top: 5%;
   .registerBtn:hover{
     background-color: #c7c7c6;
   }
+
+  
+  .cartCard{
+    width: 85%;
+    border: 1px solid black;
+    display: flex;
+    margin: auto;
+    position: relative;
+    margin: 7px auto;
+    align-items: center;
+  }
+
+.cartImg{
+  width: 15%;
+  margin-right: 10px;
+}
+
+.cartInfo{
+  
+}
+.cartInfo h1{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.cartInfo span{
+  
+}
+.cartInfo h4{
+  
+}
+.trashIcon{
+  width: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 5px;
+  cursor: pointer;
+}

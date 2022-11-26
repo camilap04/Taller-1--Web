@@ -1,6 +1,4 @@
 import {getProducts} from './app.js'
-
-const productsSection = document.querySelector('.productsContainer')
 var products = await getProducts()
 
 //filtros:
@@ -67,9 +65,10 @@ const handleSetItemsFiltered = () => {
 
 const handleShowProducts = (filteredProducts) =>{
     productsContainer.innerHTML = ``
-    for (let index = 0; index < filteredProducts.length; index++) {        
-        const card = document.createElement ('article')
+    for (let index = 0; index < filteredProducts.length; index++) {
+        const card = document.createElement ('a')
         card.classList.add('card')
+        card.setAttribute('href', `./details.html#${filteredProducts[index].id}`)
         card.innerHTML = `<div class="card-image">
         <img class="card-inner-image" src=${filteredProducts[index].imgUrl}>
        
@@ -82,7 +81,9 @@ const handleShowProducts = (filteredProducts) =>{
         <a href="#">This is a link</a>
       </div>`
 
-      productsSection.append(card)
+      productsContainer.append(card)
     }
 }
 handleShowProducts(products);
+
+//mostrar detalle del producto

@@ -1,6 +1,6 @@
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
- import { getFirestore , collection, getDocs, addDoc, query, where } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js'
+ import { getFirestore , collection, getDocs, addDoc, query, where, setDoc, doc, arrayUnion, arrayRemove, updateDoc } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js'
  import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js'
 
  // TODO: Add SDKs for Firebase products that you want to use
@@ -33,14 +33,29 @@ async function getUsers() {
 }
 
 async function getSpecificUser(email) {
-  let a;
+  let userInfo;
+  let userID;
   const q = query(collection(db, "Usuarios"), where("nombre", "==", email));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach(async (doc) => {
   // doc.data() is never undefined for query doc snapshots
-  a = (doc.id, " => ", doc.data())
+  userID = doc.id
+  userInfo = (doc.id, " => ", doc.data())
   });
-  return a
+  return {userID, userInfo}
+}
+
+async function getSpecificProduct(ids) {
+  let info;
+  let id
+  const q = query(collection(db, "Productos"), where("id", "==", ids));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach(async (doc) => {
+  // doc.data() is never undefined for query doc snapshots
+  id = doc.id
+  info = (doc.id, " => ", doc.data())
+  });
+  return  {id, info}
 }
 
 async function getProducts() {
@@ -140,5 +155,11 @@ export {
   auth,
   logOut,
   onAuthStateChanged,
-  getSpecificUser
+  getSpecificUser,
+  getSpecificProduct,
+  setDoc,
+  doc,
+  arrayRemove,
+  arrayUnion,
+  updateDoc
 }
