@@ -9,7 +9,6 @@ const drop = document.querySelector('.dropDown2');
 const dropBtn = document.querySelector('.dropDown2Btn');
 const filterOptions = ['Alphabetically, A-Z', 'Alphabetically, Z-A', 'Price, Low to high', 'Price, High to low']
 var showFilters = false;
-var filteredProducts = []
 var filter = ''
 const productsContainer = document.querySelector('.productsContainer')
 
@@ -35,35 +34,35 @@ const handleSetFilter = () => {
 const handleSetItemsFiltered = () => {
     switch (filter) {
         case 'Alphabetically, A-Z':
-            filteredProducts = products.sort(function(a, b){
+            products = products.sort(function(a, b){
                 if(a.name < b.name) { return -1; }
                 if(a.name > b.name) { return 1; }
                 return 0;
             })
             break;
         case 'Alphabetically, Z-A':
-            filteredProducts = products.sort(function(a, b){
+            products = products.sort(function(a, b){
                 if(a.name < b.name) { return 1; }
                 if(a.name > b.name) { return -1; }
                 return 0;
             })
             break;
         case 'Price, Low to high':
-            filteredProducts = products.sort(function(a, b){
+            products = products.sort(function(a, b){
                 if(a.price < b.price) { return -1; }
                 if(a.price > b.price) { return 1; }
                 return 0;
             })
         break;
         case 'Price, High to low':
-            filteredProducts = products.sort(function(a, b){
+            products = products.sort(function(a, b){
                 if(a.price < b.price) { return 1; }
                 if(a.price > b.price) { return -1; }
                 return 0;
             })
         break;
     }
-    handleShowProducts(filteredProducts)
+    handleShowProducts(products)
 }
 
 const handleShowProducts = (filteredProducts) =>{

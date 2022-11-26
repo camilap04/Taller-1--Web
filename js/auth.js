@@ -1,40 +1,44 @@
-/* import { signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { logOut, loginUser, registerUser, getAuth, getProducts, onAuthStateChanged, auth } from "./app.js";
 
-async function login(auth, email, password) {
-    try {
-        const {user} = await signInWithEmailAndPassword(auth, email, password);
-        alert(`Welcome, usuario ${user.email}`);
-    } catch (e) {
-        alert("Invalid email or password");
+//LoginInputs
+const loginBtn = document.querySelector('.loginBtn');
+const loginPassword = document.querySelector('.loginPassword');
+const loginEmail = document.querySelector('.loginEmail');
+
+//RegisterInputs
+const registerBtn = document.querySelector('.registerBtn');
+const registerPassword = document.querySelector('.registerPassword');
+const registerEmail = document.querySelector('.registerEmail');
+
+const aboutUsBtn = document.querySelector('.aboutUsBtn')
+const addProduct = document.querySelector('.add-product')
+
+
+loginBtn.addEventListener('click', ()=>{
+    loginUser(loginEmail.value, loginPassword.value)
+})
+
+registerBtn.addEventListener('click', ()=>{
+    registerUser(registerEmail.value, registerPassword.value)
+})
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log('user existe')
+        addProduct.classList.remove('invisible')
+    } else {
+        addProduct.classList.add('invisible')
+        console.log('user no existe');
     }
-}
+  });
 
-async function createUser(auth, {email, password}) {
-    try {
-        const {user} = await createUserWithEmailAndPassword(auth, email, password);
-        return user;
-    } catch (e) {
-        if (e.code === "auth/weak-password") {
-            alert("Your password must have more than 6 characters");
-        }
+//opcion para producto
 
-        if(e.code === "auth/email-already-in-use") {
-            alert("The email is already in use");
-        }
-    }
-}
 
-async function addUserToDatabase(db, userId, userInfo = {}) {
-    try {
-        await setDoc(doc(db, "users", userId), userInfo)
-    } catch (e) {
-        console.log(e);
-    }
-}
 
-export {
-    login, 
-    createUser, 
-    addUserToDatabase
-} */
+
+aboutUsBtn.addEventListener('click', ()=>{
+    console.log('logotu');
+    logOut()
+})
+//console.log(await getCurrentUser()); 

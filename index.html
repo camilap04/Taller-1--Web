@@ -1,54 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taller 1 - Pagina Web</title>
-
+  
     <enlace rel="preconectar" href="https://fonts.googleapis.com">
-        <enlace rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
+      <enlace rel="preconectar" href="https://fonts.gstatic.com" crossorigin>
         <enlace href="https: //fonts.googleapis.com/css2? family= Merriweather & display=swap" rel="hoja de estilo">
-            <!-- CSS only -->
-
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="../css/bag.css">
-            <link rel="stylesheet" href="../css/bag-mediaqueries.css">
-
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="../css/addProduct.css">
-            <link rel="stylesheet" href="../css/addProduct-mediaqueries.css">
-           
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-          />             
-
-                            <link rel="stylesheet" href="style.css">
-                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+          <!-- CSS only -->
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="../css/bag.css">
+          <link rel="stylesheet" href="../css/bag-mediaqueries.css">
+          
+          <link rel="stylesheet" href="../css/addProduct.css">
+          <link rel="stylesheet" href="../css/addProduct-mediaqueries.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  
+          <link rel="stylesheet" href="../style.css">
+          <link rel="stylesheet" href="../filters.css">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
 <body>
     
-   <header class="header">
+  <header class="header">
 
-    <img class="logo"  src="./imagenes/Sunset the Journey.png" alt="">
+    <img class="logo"  src="../imagenes/Sunset the Journey.png" alt="">
   
         
     <nav class="nav">
         
         <div class="nav-wrapper"> 
         <ul class="nav__items">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
 
             <li >
              
@@ -83,7 +77,7 @@
           
         
         </li>
-            <li><a href="/Paginas/tops.html">About us</a></li>
+            <li><a href="tops.html">About us</a></li>
 
         </ul>
         </div>
@@ -91,10 +85,11 @@
         <div class="nav-wrapper"> 
             <ul class="nav__items">
                 <li><input class="nav-seacrh" type="text" placeholder="Search.."></li>
-                <li><a href="./html/register.html">Sign in</a></li>
-                <li><button class = "nav-button bag"><img class="nav-shop" src="./imagenes/carrito (1).png" ></button></li>
+                <li><span class="register auth">Register</span></li>
+                <li><span class="logIn auth">Log in</span></li>
+                <li><span class="aboutUsBtn">Log out</span> </li>
+                <li><button class = "nav-button bag"><img class="nav-shop" src="../imagenes/carrito (1).png" ></button></li>
                 <li><button class = "nav-button add-product dropdown-toggle2">Add product</button></li>
-                
             </ul>
             </div>
             
@@ -230,35 +225,6 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
     <a class="section5__title__link"href=https://www.sunsethejourney.com/collections/the-joy-of-happy-accidents>View more</a>
    </section>
 </main>
-   <!-- <footer >
-   <div> 
-        <h3>CONTACTO</h3>
-        <p>sunsethejourney@gmail.com</p>
-    </div>
-
-    <div>
-        <h3>QUIENES SOMOS</h3>
-        <a>Cultura</a>
-        <a>Trabaja aquí</a>
-        <a>La vida en Sunset</a>
-    </div>
-
-    <div>
-        <h3>AYUDA</h3>
-        <p>Envíos</p>
-        <p>Cambios y garantías</p>
-        <p>Preguntas frecuentes</p>
-    </div>
-
-    <div>
-        <h3>SIGUENOS</h3>
-        <img src="./imagenes/instagram (1).png" >
-        <img src="./imagenes/Facebook.png" >
-        <img src="./imagenes/Twitter.png" >
-    </div>
-
-
-   </footer> -->
    <footer class="page-footer">
     <div class="container">
       <div class="row">
@@ -306,98 +272,125 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
     </div>
   </footer>
 
-<div class="add-product-modal-container invisible"> 
-  <div class="add-product-modal-background"></div>
-  <div class="add-product-modal">  
-    
-    <section class="products">
-        <h2 class="products__title">Add product</h2>
-        <form action="" id="productsForm">
-            <label for="name" class="products__label">NAME</label>
-            <input type="text" name="name" placeholder="Product name" class="products__input productName" id="name">
+  <div class="add-product-modal-container invisible"> 
+    <div class="add-product-modal-background"></div>
+    <div class="add-product-modal">  
+      
+      <section class="products">
+          <h2 class="products__title">Add product</h2>
+          <form action="" id="productsForm">
+              <label for="name" class="products__label">NAME</label>
+              <input type="text" name="name" placeholder="Product name" class="products__input productName" id="name">
+  
+              <label for="category" class="products__label">CATEGORY</label>
+              <select name="category" id="category" class="products__input productCategory">
+                  <option hidden disabled selected value>Select an option... </option>
+                  <option value="Tops">Tops</option>
+                  <option value="T-shirts">T-shirts</option>
+                  <option value="Skirts">Skirts</option>
+                  <option value="Shorts">Shorts</option>
+              </select>
+  
+              <label for="category" class="products__label">COLLECTION</label>
+              <select name="category" id="category" class="products__input productCategory">
+                  <option hidden disabled selected value>Select an option... </option>
+                  <option value="Tops">The joy of happy accidents</option>
+                  <option value="T-shirts">Summer love</option>
+                  <option value="Skirts">Islas de los sueños</option>
+                  <option value="Shorts">Siempre verano</option>
+              </select>
+  
+              <label for="price" class="products__label products__label--price">PRICE</label>
+              <input type="number" name="price" placeholder="Product price" class="products__input productPrice" id="price">
+  
+              <label for="description" class="products__label">DESCRIPTION</label>
+              <textarea name="description" class="products__input products__input--description productDescription" id="description" placeholder="Describe the product here..."></textarea>
+  
+              
+  
+              
+                      <option hidden disabled selected value>Select an option... </option>
+                  </select>
+                  <div id="colorBox"></div>
+              </div>
+  
+              <div>
+                  <h4 class="products__label">RATING</h4>
+                  <ul class="rating">
+                      <li class="rating-item" data-rate="1"></li>
+                      <li class="rating-item" data-rate="2"></li>
+                      <li class="rating-item active" data-rate="3"></li>
+                      <li class="rating-item" data-rate="4"></li>
+                      <li class="rating-item" data-rate="5"></li>
+                  </ul>
+              </div>
+              
+              <label for="images" class="products__label">IMAGES</label>
+              <input type="file" name="images" id="images" class="products__upload" multiple>
+  
+              <input type="submit" value="ADD PRODUCT" class="products__submit">
+          </form>
+  
+      </section>
+  
+    </div>
 
-            <label for="category" class="products__label">CATEGORY</label>
-            <select name="category" id="category" class="products__input productCategory">
-                <option hidden disabled selected value>Select an option... </option>
-                <option value="Tops">Tops</option>
-                <option value="T-shirts">T-shirts</option>
-                <option value="Skirts">Skirts</option>
-                <option value="Shorts">Shorts</option>
-            </select>
-
-            <label for="category" class="products__label">COLLECTION</label>
-            <select name="category" id="category" class="products__input productCategory">
-                <option hidden disabled selected value>Select an option... </option>
-                <option value="Tops">The joy of happy accidents</option>
-                <option value="T-shirts">Summer love</option>
-                <option value="Skirts">Islas de los sueños</option>
-                <option value="Shorts">Siempre verano</option>
-            </select>
-
-            <label for="price" class="products__label products__label--price">PRICE</label>
-            <input type="number" name="price" placeholder="Product price" class="products__input productPrice" id="price">
-
-            <label for="description" class="products__label">DESCRIPTION</label>
-            <textarea name="description" class="products__input products__input--description productDescription" id="description" placeholder="Describe the product here..."></textarea>
-
-            
-
-            
-                    <option hidden disabled selected value>Select an option... </option>
-                </select>
-                <div id="colorBox"></div>
+  <div class="bag-modal-container invisible"> 
+    <div class="bag-modal-background"></div>
+    <div class="bag-modal">  
+   
+  
+    <section class="container">
+        <h2 class="container__title">Shopping bag</h2>
+        <ul class="bag" id="bagSection"></ul>
+        <div class="total">
+            <div class="total__first">
+                <h2 class="total__title">TOTAL:</h2>
+                <h2 class="total__total" id="totalSection">0</h2>
             </div>
-
             <div>
-                <h4 class="products__label">RATING</h4>
-                <ul class="rating">
-                    <li class="rating-item" data-rate="1"></li>
-                    <li class="rating-item" data-rate="2"></li>
-                    <li class="rating-item active" data-rate="3"></li>
-                    <li class="rating-item" data-rate="4"></li>
-                    <li class="rating-item" data-rate="5"></li>
-                </ul>
+                <a href="./checkout.html" class="total__checkout" id="checkoutBtn">GO TO CHECKOUT</a>
+              
             </div>
-            
-            <label for="images" class="products__label">IMAGES</label>
-            <input type="file" name="images" id="images" class="products__upload" multiple>
-
-            <input type="submit" value="ADD PRODUCT" class="products__submit">
-        </form>
-
+        </div>
     </section>
+  
+    <script src="../js/bag.js" type="module"></script>
+  
+  
+    </div>
+  
+    </div>
 
-  </div>
-</div>
-
-<!-- Bag container -->
-<div class="bag-modal-container invisible"> 
-  <div class="bag-modal-background"></div>
-  <div class="bag-modal">  
- 
-
-  <section class="container">
-      <h2 class="container__title">Shopping bag</h2>
-      <ul class="bag" id="bagSection"></ul>
-      <div class="total">
-          <div class="total__first">
-              <h2 class="total__title">TOTAL:</h2>
-              <h2 class="total__total" id="totalSection">0</h2>
-          </div>
-          <div>
-              <a href="./checkout.html" class="total__checkout" id="checkoutBtn">GO TO CHECKOUT</a>
-            
-          </div>
+  <div class="logIn-modal-container invisible"> 
+    <div class="logIn-modal-background"></div>
+    <div class="logIn-modal">
+      <div class="inputLogin">
+        <span>Correo:</span>
+        <input class="loginEmail" type="text" name="" id="">
       </div>
-  </section>
-
-  <script src="../js/bag.js" type="module"></script>
-
-
+      <div class="inputLogin">
+        <span>Contraseña:</span>
+        <input class="loginPassword" type="text" name="" id="">
+      </div>
+      <button class="loginBtn">Logearse</button>
+    </div>
   </div>
 
+  <div class="register-modal-container invisible"> 
+    <div class="register-modal-background"></div>
+    <div class="register-modal">
+      <div class="inputRegister">
+        <span>Correo:</span>
+        <input class="registerEmail" type="text" name="" id="">
+      </div>
+      <div class="inputRegister">
+        <span>Contraseña:</span>
+        <input class="registerPassword"type="text" name="" id="">
+      </div>
+      <button class="registerBtn">Registrarse</button>
+    </div>
   </div>
-</div>
 
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
@@ -415,6 +408,7 @@ crossorigin="anonymous"></script>
    
    <script src="./script.js" ></script>
 <script type='module' src="./js/app.js"></script>
+<script type="module" src="./js/auth.js"></script>
 <script type='module' src="./js/createProduct.js"></script>
 </body>
 </html>

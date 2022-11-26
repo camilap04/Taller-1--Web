@@ -1,6 +1,8 @@
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
- import { getFirestore , collection, getDocs, addDoc} from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js'
+ import { getFirestore , collection, getDocs, addDoc } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js'
+ import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js'
+
  // TODO: Add SDKs for Firebase products that you want to use
  // https://firebase.google.com/docs/web/setup#available-libraries
  
@@ -13,12 +15,15 @@
    messagingSenderId: "924032395057",
    appId: "1:924032395057:web:e5b2c9eda5994b34e03210",
    databaseURL: "https://f-sunset-the-journey-default-rtdb.firebaseio.com"
- };
+  };
+  
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth();
+  const db = getFirestore(app);
 
-
- // Initialize Firebase
- const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+  // Firestore
 
 async function getUsers() {
   const usersCol = collection(db, 'Usuarios');
@@ -32,7 +37,6 @@ async function getProducts() {
   const productsSnapshot = await getDocs(productsCol);
   const productsList = productsSnapshot.docs.map(doc => doc.data());
   return await productsList
-  
 }
 
 async function createUser(nombre) {
@@ -45,6 +49,7 @@ async function createUser(nombre) {
     console.error("Error adding document: ", e);
   }
 }
+
 async function createProducts(producto) {
   try {
     const docRef = await addDoc(collection(db, "Productos"), producto);
@@ -53,10 +58,6 @@ async function createProducts(producto) {
     console.error("Error adding document: ", e);
   }
 }
-
-
-getProducts();
-getUsers()
 
 //ejemplo de crear usuarios y productos 
 
@@ -68,10 +69,55 @@ getUsers()
       name : "WAKERE TOP" ,
       price : "130.000",
       description: "Top wayu tejido a mano" ,
-      type: ["Top"],
       collection: "The joy of happy accidents"
   }
 ) */
+
+//Auth
+
+function registerUser(email, password) {
+  createUserWithEmailAndPassword(auth, email, password)
+  .then(() => {
+    alert('usuario registrado con exito');
+    loginUser(email, password)
+  })
+  .catch((error) => {
+    const errorMessage = error.message;
+    console.log(errorMessage);
+    alert('error al registrarse: \n'+errorMessage);
+  });
+}
+
+function loginUser(email, password) {
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      alert('usuario logeado exitosamente')
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+      alert('error al logearse: \n'+errorMessage);
+    });
+}
+
+function logOut() {
+  signOut(auth).then(() => {
+    alert('has cerrado sesión')
+  }).catch((error) => {
+    alert('hubo un error al cerrar sesión')
+  });
+}
+
+  onAuthStateChanged(auth, (user) => {
+    console.log(auth.currentUser.email);
+  });
+
+
+
+// console.log(auth.currentUser);
+
+//registerUser('carlos@gmail.com', 'asd123')
+//loginUser('carlos@gmail.com', 'asd123')
+//logOut()
 
 export {
   db,
@@ -79,5 +125,11 @@ export {
   getProducts,
   getUsers,
   createUser,
-  createProducts
+  createProducts,
+  registerUser,
+  loginUser,
+  getAuth,
+  auth,
+  logOut,
+  onAuthStateChanged
 }
