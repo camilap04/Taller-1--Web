@@ -1,4 +1,5 @@
 import { doc, getSpecificProduct, setDoc, db, onAuthStateChanged, auth, getSpecificUser, arrayRemove, arrayUnion, updateDoc } from "./app.js";
+import { handleShowCartProducts } from "./auth.js";
 
 var productID = parseInt(window.location.href.split('#')[1])
 
@@ -23,16 +24,19 @@ card.innerHTML = `
 page.append(card)
 
 var userID2;
+var userInfo2
 onAuthStateChanged(auth, async (user) => {
-    var {userID} = await getSpecificUser(user.email) 
+    var {userID, userInfo} = await getSpecificUser(user.email) 
         userID2 = userID
+        userInfo2 = userInfo
   });
 
 const cartBtn = document.querySelector('.cartBtn')
 cartBtn.addEventListener('click', async ()=>{
-    console.log(userID2);
     const userRef = doc(db, 'Usuarios', userID2);
     await updateDoc(userRef, {
         cart: arrayUnion(productID)
     });
+    alert('el producto se ha agregado correctamente')
+    handleShowCartProducts(userInfo2.nombre)
 })

@@ -672,9 +672,8 @@ padding-top: 5%;
   /*# sourceMappingURL=login.css.map */
 
 
-  .invisble{
+  .invisible{
     display: none;
-
   }
   .add-product-modal{
   position:absolute; 
@@ -851,4 +850,8 @@ padding-top: 5%;
   right: 0;
   margin: 5px;
   cursor: pointer;
+}
+
+.userName{
+  margin: 10px;
 }

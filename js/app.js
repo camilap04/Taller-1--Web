@@ -66,6 +66,7 @@ async function getProducts() {
 }
 
 async function createUser(nombre, admin) {
+  console.log(nombre, admin);
   try {
     const docRef = await addDoc(collection(db, "Usuarios"), {
       nombre: nombre,
