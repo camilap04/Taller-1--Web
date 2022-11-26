@@ -1,6 +1,6 @@
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
- import { getFirestore , collection, getDocs, addDoc } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js'
+ import { getFirestore , collection, getDocs, addDoc, query, where } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js'
  import { getAuth , createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js'
 
  // TODO: Add SDKs for Firebase products that you want to use
@@ -32,6 +32,17 @@ async function getUsers() {
   return usersList
 }
 
+async function getSpecificUser(email) {
+  let a;
+  const q = query(collection(db, "Usuarios"), where("nombre", "==", email));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach(async (doc) => {
+  // doc.data() is never undefined for query doc snapshots
+  a = (doc.id, " => ", doc.data())
+  });
+  return a
+}
+
 async function getProducts() {
     const productsCol = collection(db, 'Productos');
   const productsSnapshot = await getDocs(productsCol);
@@ -39,10 +50,12 @@ async function getProducts() {
   return await productsList
 }
 
-async function createUser(nombre) {
+async function createUser(nombre, admin) {
   try {
     const docRef = await addDoc(collection(db, "Usuarios"), {
-      nombre: nombre
+      nombre: nombre,
+      admin: admin,
+      cart: []
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
@@ -107,11 +120,6 @@ function logOut() {
   });
 }
 
-  onAuthStateChanged(auth, (user) => {
-    console.log(auth.currentUser.email);
-  });
-
-
 
 // console.log(auth.currentUser);
 
@@ -131,5 +139,6 @@ export {
   getAuth,
   auth,
   logOut,
-  onAuthStateChanged
+  onAuthStateChanged,
+  getSpecificUser
 }

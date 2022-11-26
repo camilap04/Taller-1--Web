@@ -1,4 +1,4 @@
-import { logOut, loginUser, registerUser, getAuth, getProducts, onAuthStateChanged, auth } from "./app.js";
+import { logOut, loginUser, registerUser, getAuth, getProducts, onAuthStateChanged, auth, createUser, getSpecificUser } from "./app.js";
 
 //LoginInputs
 const loginBtn = document.querySelector('.loginBtn');
@@ -12,7 +12,8 @@ const registerEmail = document.querySelector('.registerEmail');
 
 const aboutUsBtn = document.querySelector('.aboutUsBtn')
 const addProduct = document.querySelector('.add-product')
-
+const registerAdmin = document.querySelector('.registerAdmin')
+const shoppingCart = document.querySelector('.shoppingCart')
 
 loginBtn.addEventListener('click', ()=>{
     loginUser(loginEmail.value, loginPassword.value)
@@ -20,25 +21,25 @@ loginBtn.addEventListener('click', ()=>{
 
 registerBtn.addEventListener('click', ()=>{
     registerUser(registerEmail.value, registerPassword.value)
+    createUser(registerEmail.value, registerAdmin.checked)
 })
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
+    let info
     if (user) {
-        console.log('user existe')
-        addProduct.classList.remove('invisible')
+        console.log('usuario existe',user.email);
+        info = await getSpecificUser(user.email) 
+        if (info.admin) {
+            addProduct.classList.remove('invisible')
+        }
+        shoppingCart.classList.remove('invisible')            
     } else {
         addProduct.classList.add('invisible')
-        console.log('user no existe');
+        shoppingCart.classList.add('invisible')
+        console.log('no hay usuario logeado');
     }
   });
 
-//opcion para producto
-
-
-
-
 aboutUsBtn.addEventListener('click', ()=>{
-    console.log('logotu');
     logOut()
 })
-//console.log(await getCurrentUser()); 
