@@ -22,8 +22,8 @@ loginBtn.addEventListener('click', ()=>{
 })
 
 registerBtn.addEventListener('click', ()=>{
-    registerUser(registerEmail.value, registerPassword.value)
     createUser(registerEmail.value, registerAdmin.checked)
+    registerUser(registerEmail.value, registerPassword.value)
     loadUserInfo()
     document.querySelector(".register-modal-container").classList.toggle("invisible")
 })
