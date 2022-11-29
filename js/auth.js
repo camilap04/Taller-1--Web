@@ -30,11 +30,9 @@ registerBtn.addEventListener('click', ()=>{
 
 function loadUserInfo() {
     onAuthStateChanged(auth, async (user) => {
-    
         if (user) {
-            console.log('usuario logeado:',user.email);
-            var {userInfo} = await getSpecificUser(user.email) 
-            
+            console.log('usuario logeado: ',user.email);
+            var {userInfo} = await getSpecificUser(user.email)
             if (userInfo.admin) {
                 console.log(userInfo.admin);
                 addProduct.classList.remove('invisible')

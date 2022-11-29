@@ -66,7 +66,7 @@ async function getProducts() {
 }
 
 async function createUser(nombre, admin) {
-  console.log(nombre, admin);
+  console.log('crear usuario: '+nombre, admin);
   try {
     const docRef = await addDoc(collection(db, "Usuarios"), {
       nombre: nombre,
@@ -108,6 +108,7 @@ function registerUser(email, password) {
   createUserWithEmailAndPassword(auth, email, password)
   .then(() => {
     alert('usuario registrado con exito');
+    console.log('usuario registrado' + email, password);
     loginUser(email, password)
   })
   .catch((error) => {
