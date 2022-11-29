@@ -1,11 +1,11 @@
-import { doc, getSpecificProduct, setDoc, db, onAuthStateChanged, auth, getSpecificUser, arrayRemove, arrayUnion, updateDoc } from "./app.js";
+import { doc, getSpecificProduct, db, onAuthStateChanged, auth, getSpecificUser, arrayUnion, updateDoc } from "./app.js";
 import { handleShowCartProducts } from "./auth.js";
 
 var productID = parseInt(window.location.href.split('#')[1])
 
 var { info } = await getSpecificProduct(productID);
 
-
+console.log(info);
 const page = document.querySelector('.productDetail')
 
 page.innerHTML = ``

@@ -1,5 +1,5 @@
 import {getProducts} from './app.js'
-var products = await getProducts()
+var AllProducts = await getProducts()
 
 //filtros:
 
@@ -9,7 +9,25 @@ const filterOptions = ['Alphabetically, A-Z', 'Alphabetically, Z-A', 'Price, Low
 var showFilters = false;
 var filter = ''
 const productsContainer = document.querySelector('.productsContainer')
-const inputValue = document.querySelector('.inputValue')
+const inputValue = document.querySelector('.inputValue');
+const sectionTitle = document.querySelector('.tops-h1')
+
+let categoryFilter = window.location.href.split('#')[1].replaceAll("%20", ' ')
+sectionTitle.innerHTML = categoryFilter
+
+let products = []
+if (categoryFilter == '') {
+    products = AllProducts
+} else {
+    for (let index = 0; index < AllProducts.length; index++) {
+        console.log(AllProducts[index].collection.toLowerCase());
+        
+        if ( AllProducts[index].collection.toLowerCase() == categoryFilter.toLowerCase()) {
+            products.push(AllProducts[index])
+        }
+    }
+}
+
 
 dropBtn.addEventListener('click', () =>{
     showFilters = !showFilters
@@ -25,16 +43,18 @@ const handleSetFilter = () => {
     for (let index = 0; index < allOptions.length; index++) {
         allOptions[index].addEventListener('click', () => {
             filter = allOptions[index].innerHTML;
-            if (inputValue == '') {
+            console.log(products);
+            if (inputValue) {
                 handleSetItemsFiltered(products)
             } else {
-                handleSetItemsFiltered(handleSetSearchProducts(inputValue.value)); 
+                handleSetItemsFiltered(handleSetSearchProducts(products, inputValue.value)); 
             }
         })
     }
 }
 
 const handleSetItemsFiltered = (items) => {
+    console.log(items);
     let filteredProducts;
     switch (filter) {
         case 'Alphabetically, A-Z':
@@ -92,19 +112,19 @@ const handleShowProducts = (filteredProducts) =>{
 }
 handleShowProducts(products);
 
-const handleSetSearchProducts = (value) =>{
-    console.log(value);
+const handleSetSearchProducts = (items, value) =>{
     let searchProducts = []
-    for (let index = 0; index < products.length; index++) {
-        if (products[index].name.toLowerCase().includes(value)) {
-            products[index].name.includes(value)    
-            searchProducts.push(products[index])
-        }
+    for (let index = 0; index < items.length; index++) {
+        if (items[index].name.toLowerCase().includes(value)) {
+            items[index].name.includes(value)    
+            searchProducts.push(items[index])
+        } 
     }
     handleShowProducts(searchProducts)
     return searchProducts
 }
 
 inputValue.addEventListener('input', (e)=>{
-    handleSetSearchProducts(e.target.value)
+    handleSetSearchProducts(products, e.target.value)
 })
+

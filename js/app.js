@@ -82,9 +82,9 @@ async function createUser(nombre, admin) {
 async function createProducts(producto) {
   try {
     const docRef = await addDoc(collection(db, "Productos"), producto);
-    console.log("Document written with ID: ", docRef.id);
+    alert("Producto creado con el ID: ", docRef.id.toString());
   } catch (e) {
-    console.error("Error adding document: ", e);
+    alert("Error: \n", e);
   }
 }
 
