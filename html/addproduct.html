@@ -44,24 +44,9 @@
                 <option value="eyes">Skirts</option>
                 <option value="lips">Shorts</option>
             </select>
-
-            <label for="price" class="products__label products__label--price">PRICE</label>
-            <input type="number" name="price" placeholder="Product price" class="products__input" id="price">
-
-            <label for="description" class="products__label">DESCRIPTION</label>
-            <textarea name="description" class="products__input products__input--description" id="description" placeholder="Describe the product here..."></textarea>
-
-            <label for="stock" class="products__label">STOCK</label>
-            <input type="number" name="stock" placeholder="Product stock" class="products__input" id="stock">
-
-            <label for="color" class="products__label">COLOR</label>
-            <div class="select">
-                <select name="color" id="color" class="products__input products__input--color">
-                    <option hidden disabled selected value>Select an option... </option>
-                </select>
-                <div id="colorBox"></div>
-            </div>
-
+            
+            
+            
             <div>
                 <h4 class="products__label">RATING</h4>
                 <ul class="rating">
@@ -73,10 +58,10 @@
                 </ul>
             </div>
             
+            <input type="submit" value="ADD PRODUCT" class="products__submit">
             <label for="images" class="products__label">IMAGES</label>
             <input type="file" name="images" id="images" class="products__upload" multiple>
 
-            <input type="submit" value="ADD PRODUCT" class="products__submit">
         </form>
     </section>
 

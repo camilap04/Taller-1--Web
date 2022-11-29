@@ -9,6 +9,7 @@ const filterOptions = ['Alphabetically, A-Z', 'Alphabetically, Z-A', 'Price, Low
 var showFilters = false;
 var filter = ''
 const productsContainer = document.querySelector('.productsContainer')
+const inputValue = document.querySelector('.inputValue')
 
 dropBtn.addEventListener('click', () =>{
     showFilters = !showFilters
@@ -24,43 +25,48 @@ const handleSetFilter = () => {
     for (let index = 0; index < allOptions.length; index++) {
         allOptions[index].addEventListener('click', () => {
             filter = allOptions[index].innerHTML;
-            handleSetItemsFiltered()
+            if (inputValue == '') {
+                handleSetItemsFiltered(products)
+            } else {
+                handleSetItemsFiltered(handleSetSearchProducts(inputValue.value)); 
+            }
         })
     }
 }
 
-const handleSetItemsFiltered = () => {
+const handleSetItemsFiltered = (items) => {
+    let filteredProducts;
     switch (filter) {
         case 'Alphabetically, A-Z':
-            products = products.sort(function(a, b){
+            filteredProducts = items.sort(function(a, b){
                 if(a.name < b.name) { return -1; }
                 if(a.name > b.name) { return 1; }
                 return 0;
             })
             break;
         case 'Alphabetically, Z-A':
-            products = products.sort(function(a, b){
+            filteredProducts = items.sort(function(a, b){
                 if(a.name < b.name) { return 1; }
                 if(a.name > b.name) { return -1; }
                 return 0;
             })
             break;
         case 'Price, Low to high':
-            products = products.sort(function(a, b){
+            filteredProducts = items.sort(function(a, b){
                 if(a.price < b.price) { return -1; }
                 if(a.price > b.price) { return 1; }
                 return 0;
             })
         break;
         case 'Price, High to low':
-            products = products.sort(function(a, b){
+            filteredProducts = items.sort(function(a, b){
                 if(a.price < b.price) { return 1; }
                 if(a.price > b.price) { return -1; }
                 return 0;
             })
         break;
     }
-    handleShowProducts(products)
+    handleShowProducts(filteredProducts)
 }
 
 const handleShowProducts = (filteredProducts) =>{
@@ -86,4 +92,19 @@ const handleShowProducts = (filteredProducts) =>{
 }
 handleShowProducts(products);
 
-//mostrar detalle del producto
+const handleSetSearchProducts = (value) =>{
+    console.log(value);
+    let searchProducts = []
+    for (let index = 0; index < products.length; index++) {
+        if (products[index].name.toLowerCase().includes(value)) {
+            products[index].name.includes(value)    
+            searchProducts.push(products[index])
+        }
+    }
+    handleShowProducts(searchProducts)
+    return searchProducts
+}
+
+inputValue.addEventListener('input', (e)=>{
+    handleSetSearchProducts(e.target.value)
+})
