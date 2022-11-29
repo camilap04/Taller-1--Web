@@ -21,8 +21,8 @@ loginBtn.addEventListener('click', ()=>{
     document.querySelector(".logIn-modal-container").classList.toggle("invisible")
 })
 
-registerBtn.addEventListener('click', ()=>{
-    createUser(registerEmail.value, registerAdmin.checked)
+registerBtn.addEventListener('click', async ()=>{
+    await createUser(registerEmail.value, registerAdmin.checked)
     registerUser(registerEmail.value, registerPassword.value)
     loadUserInfo()
     document.querySelector(".register-modal-container").classList.toggle("invisible")
