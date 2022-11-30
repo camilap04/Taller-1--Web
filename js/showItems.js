@@ -12,17 +12,32 @@ const productsContainer = document.querySelector('.productsContainer')
 const inputValue = document.querySelector('.inputValue');
 const sectionTitle = document.querySelector('.tops-h1')
 
-let categoryFilter = window.location.href.split('#')[1].replaceAll("%20", ' ')
-sectionTitle.innerHTML = categoryFilter
+console.log(window.location.href.split('#'));
+let collOrCatFilter = window.location.href.split('#')[2].replaceAll("%20", ' ')
+let collOrCat = window.location.href.split('#')[1].replaceAll("%20", ' ')
+sectionTitle.innerHTML = collOrCatFilter
+console.log(collOrCat);
 
 let products = []
 
-if (categoryFilter == '') {
-    products = [...AllProducts]
+if (collOrCat == 'collection') {
+    if (collOrCatFilter == '') {
+        products = [...AllProducts]
+    } else {
+        for (let index = 0; index < AllProducts.length; index++) {
+            if ( AllProducts[index].collection.toLowerCase() == collOrCatFilter.toLowerCase()) {
+                products.push(AllProducts[index])
+            }
+        }
+    }
 } else {
-    for (let index = 0; index < AllProducts.length; index++) {
-        if ( AllProducts[index].collection.toLowerCase() == categoryFilter.toLowerCase()) {
-            products.push(AllProducts[index])
+    if (collOrCatFilter == '') {
+        products = [...AllProducts]
+    } else {
+        for (let index = 0; index < AllProducts.length; index++) {
+            if ( AllProducts[index].type.toLowerCase() == collOrCatFilter.toLowerCase()) {
+                products.push(AllProducts[index])
+            }
         }
     }
 }

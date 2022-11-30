@@ -51,12 +51,10 @@
                   <span class="dropdown-toggle2">Categories</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="./Paginas/tops.html#Tops and shirts">Tops and Shirts</a>
-                  <a class="dropdown-item" href="./Paginas/tops.html#Bottoms">Bottoms</a>
-                  <a class="dropdown-item" href="./Paginas/tops.html#Dresses">Dresses</a>
-                  <a class="dropdown-item" href="./Paginas/tops.html#Sets">Sets</a>
-                  <a class="dropdown-item" href="./Paginas/tops.html#Jumpsuits">JumpSuits</a>
-                  <a class="dropdown-item" href="./Paginas/tops.html#Kniet pieces">Kniet pieces</a>
+                  <a class="dropdown-item" href="./Paginas/tops.html?reload=1#category#Tops">Tops</a>
+                  <a class="dropdown-item" href="./Paginas/tops.html?reload=2#category#T-shirts">T-shirts</a>
+                  <a class="dropdown-item" href="./Paginas/tops.html?reload=3#category#Skirts">Skirts</a>
+                  <a class="dropdown-item" href="./Paginas/tops.html?reload=4#category#Shorts">Shorts</a>
                 </div>
               </div>
           
@@ -68,16 +66,16 @@
                   <span class="dropdown-toggle2">Collection</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="./Paginas/tops.html?reload=7#The Joy of Happy Accidents">The Joy of Happy Accidents</a>
-                  <a class="dropdown-item" href="./Paginas/tops.html?reload=8#Summer love">Summer love</a>
-                  <a class="dropdown-item" href="./Paginas/tops.html?reload=9#Dream island">Dream Island</a>
-                  <a class="dropdown-item" href="./Paginas/tops.html?reload=0#Siempre Verano">Siempre Verano</a>
+                  <a class="dropdown-item" href="./Paginas/tops.html?reload=7#collection#The Joy of Happy Accidents">The Joy of Happy Accidents</a>
+                  <a class="dropdown-item" href="./Paginas/tops.html?reload=8#collection#Summer love">Summer love</a>
+                  <a class="dropdown-item" href="./Paginas/tops.html?reload=9#collection#Dream island">Dream Island</a>
+                  <a class="dropdown-item" href="./Paginas/tops.html?reload=0#collection#Siempre Verano">Siempre Verano</a>
                 </div>
               </div>
           
         
         </li>
-            <li><a href="./Paginas/tops.html">About us</a></li>
+            <li><a href="./Paginas/tops.html##">All products</a></li>
 
         </ul>
         </div>
@@ -308,23 +306,12 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
               <textarea name="description" class="products__input products__input--description productDescription" id="description" placeholder="Describe the product here..."></textarea>
                       <option hidden disabled selected value>Select an option... </option>
                   </select>
-                  
+                  <label for="description" class="products__label">Image (url)</label>
+                  <input type="text" name="image" placeholder="Url of an image" class="products__input productImgUrl" id="images">
+                  <input type="submit" value="ADD PRODUCT" class="products__submit">
               </div>
   
               <div>
-                <h4 class="products__label">RATING</h4>
-                <ul class="rating">
-                      <li class="rating-item" data-rate="1"></li>
-                      <li class="rating-item" data-rate="2"></li>
-                      <li class="rating-item active" data-rate="3"></li>
-                      <li class="rating-item" data-rate="4"></li>
-                      <li class="rating-item" data-rate="5"></li>
-                    </ul>
-                  </div>
-                  <label for="images" class="products__label">IMAGES</label>
-                  <input type="file" name="images" id="images" class="products__upload" multiple>
-                  <input type="submit" value="ADD PRODUCT" class="products__submit">
-              </div>
           </form>
   
       </section>
