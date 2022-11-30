@@ -81,16 +81,16 @@
         </div>
 
         <div class="nav-wrapper"> 
-            <ul class="nav__items">
-                <li><input class="nav-seacrh inputValue" type="text" placeholder="Search.."></li>
-                <li><span class="register auth">Register</span></li>
-                <li><span class="logIn auth">Log in</span></li>
-                <li><span class="userName"></span></li>
-                <li><span class="aboutUsBtn">Log out</span> </li>
-                <li><button class = "nav-button bag shoppingCart invisible"><img class="nav-shop" src="./imagenes/carrito (1).png" ></button></li>
-                <li><button class = "nav-button add-product dropdown-toggle2 invisible">Add product</button></li>
-            </ul>
-            </div>
+          <ul class="nav__items">
+              <li><input class="nav-seacrh" type="text" placeholder="Search.."></li>
+              <li><span class="register auth">Register</span></li>
+              <li><span class="logIn auth">Log in</span></li>
+              <li><span class="userName">Usuario</span></li>
+              <li><span class="aboutUsBtn">Log out</span> </li>
+              <li><button class = "nav-button bag shoppingCart invisible"><img class="nav-shop" src="../imagenes/carrito (1).png" ></button></li>
+              <li><button class = "nav-button add-product dropdown-toggle2 invisible">Add product</button></li>
+          </ul>
+          </div>
             
     </nav>
 
@@ -290,7 +290,7 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
                   <option value="Shorts">Shorts</option>
               </select>
   
-              <label for="category" class="products__label">COLLECTION</label>
+              <label for="category" class="products__label ">COLLECTION</label>
               <select name="category" id="category" class="products__input productCollection">
                 <option hidden disabled selected value>Select an option... </option>
                 <option value="The joy of happy accidents">The joy of happy accidents</option>
@@ -298,20 +298,17 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
                 <option value="Dream island">Dream island</option>
                 <option value="Siempre verano">Siempre verano</option>
               </select>
-  
-              <label for="price" class="products__label products__label--price">PRICE</label>
-              <input type="number" name="price" placeholder="Product price" class="products__input productPrice" id="price">
-  
-              <label for="description" class="products__label">DESCRIPTION</label>
-              <textarea name="description" class="products__input products__input--description productDescription" id="description" placeholder="Describe the product here..."></textarea>
-                      <option hidden disabled selected value>Select an option... </option>
-                  </select>
+              
+              <div>
+                <label for="price" class="products__label products__label--price">PRICE</label>
+            <input type="number" name="price" placeholder="Product price" class="products__input productPrice" id="price">
+            <label for="description" class="products__label">DESCRIPTION</label>
+            <textarea name="description" class="products__input products__input--description productDescription" id="description" placeholder="Describe the product here..."></textarea>
+                  </div>
                   <label for="description" class="products__label">Image (url)</label>
                   <input type="text" name="image" placeholder="Url of an image" class="products__input productImgUrl" id="images">
                   <input type="submit" value="ADD PRODUCT" class="products__submit">
               </div>
-  
-              <div>
           </form>
   
       </section>
@@ -321,9 +318,7 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
   <div class="bag-modal-container invisible"> 
     <div class="bag-modal-background"></div>
     <div class="bag-modal">  
-   
-  
-    <section class="container">
+      <section class="container">
         <h2 class="container__title">Shopping bag</h2>
         <div class="bagItems" id="bagSection"></div>
         <div class="total">
@@ -333,14 +328,9 @@ onmouseover="onHover3();" onmouseout="offHover3();" />
             </div>
             <div>
                 <a href="./checkout.html" class="total__checkout" id="checkoutBtn">GO TO CHECKOUT</a>
-              
             </div>
         </div>
-    </section>
-  
-    <script src="./js/bag.js" type="module"></script>
-  
-  
+      </section>
     </div>
   
     </div>
@@ -394,8 +384,8 @@ crossorigin="anonymous"></script>
 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 crossorigin="anonymous"></script>
    
-  <script type="module" src="../js/createProduct.js"></script>
   <script src="./script.js" ></script>
+  
   <script type='module' src="./js/app.js"></script>
   <script type="module" src="./js/auth.js"></script>
   <script type='module' src="./js/createProduct.js"></script>
