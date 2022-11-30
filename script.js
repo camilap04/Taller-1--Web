@@ -48,6 +48,7 @@ function offHover3()
     $("#img3").attr('src', './imagenes/wereketop.png');
 }
 
+// Mostrar y ocultar modales
 
 const addproduct = document.querySelector(".add-product");
 const modalBackground = document.querySelector(".add-product-modal-background");

@@ -16,19 +16,18 @@ let categoryFilter = window.location.href.split('#')[1].replaceAll("%20", ' ')
 sectionTitle.innerHTML = categoryFilter
 
 let products = []
+
 if (categoryFilter == '') {
-    products = AllProducts
+    products = [...AllProducts]
 } else {
     for (let index = 0; index < AllProducts.length; index++) {
-        console.log(AllProducts[index].collection.toLowerCase());
-        
         if ( AllProducts[index].collection.toLowerCase() == categoryFilter.toLowerCase()) {
             products.push(AllProducts[index])
         }
     }
 }
 
-
+// filtro de a-z o precio
 dropBtn.addEventListener('click', () =>{
     showFilters = !showFilters
     showFilters ? 
@@ -43,14 +42,28 @@ const handleSetFilter = () => {
     for (let index = 0; index < allOptions.length; index++) {
         allOptions[index].addEventListener('click', () => {
             filter = allOptions[index].innerHTML;
-            console.log(products);
-            if (inputValue) {
+            if (!inputValue) {
                 handleSetItemsFiltered(products)
             } else {
                 handleSetItemsFiltered(handleSetSearchProducts(products, inputValue.value)); 
             }
         })
     }
+}
+
+inputValue.addEventListener('input', (e)=>{
+    handleSetSearchProducts(products, e.target.value)
+})
+
+const handleSetSearchProducts = (items, value) =>{
+    let searchProducts = []
+    for (let index = 0; index < items.length; index++) {
+        if (items[index].name.toLowerCase().includes(value)) {
+            searchProducts.push(items[index])
+        } 
+    }
+    handleShowProducts(searchProducts)
+    return searchProducts
 }
 
 const handleSetItemsFiltered = (items) => {
@@ -89,7 +102,10 @@ const handleSetItemsFiltered = (items) => {
     handleShowProducts(filteredProducts)
 }
 
+
+//Funcion que muestra los productos, recibe por parametro una lista de los productos ya filtrados si es que tienen algun filtro
 const handleShowProducts = (filteredProducts) =>{
+    console.log(filteredProducts);
     productsContainer.innerHTML = ``
     for (let index = 0; index < filteredProducts.length; index++) {
         const card = document.createElement ('a')
@@ -111,20 +127,4 @@ const handleShowProducts = (filteredProducts) =>{
     }
 }
 handleShowProducts(products);
-
-const handleSetSearchProducts = (items, value) =>{
-    let searchProducts = []
-    for (let index = 0; index < items.length; index++) {
-        if (items[index].name.toLowerCase().includes(value)) {
-            items[index].name.includes(value)    
-            searchProducts.push(items[index])
-        } 
-    }
-    handleShowProducts(searchProducts)
-    return searchProducts
-}
-
-inputValue.addEventListener('input', (e)=>{
-    handleSetSearchProducts(products, e.target.value)
-})
 

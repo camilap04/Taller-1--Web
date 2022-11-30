@@ -28,6 +28,7 @@ registerBtn.addEventListener('click', async ()=>{
     document.querySelector(".register-modal-container").classList.toggle("invisible")
 })
 
+// Muestra o deja de mostrar botones dependiendo si hay un usuario registrado
 function loadUserInfo() {
     onAuthStateChanged(auth, async (user) => {
         if (user) {
@@ -63,6 +64,7 @@ loadUserInfo()
 
 var userID2;
 
+// Muestra la informacion de adentro del carrito
 async function handleShowCartProducts(email){
     var { userID, userInfo } = await getSpecificUser(email) 
     let total = 0;
@@ -84,9 +86,9 @@ async function handleShowCartProducts(email){
     }
     document.querySelector('.total__total').innerHTML = total
 
+    //Borrar elementos del carrito
     for (let index = 0; index < document.querySelectorAll('.trashIcon').length ; index++) {
         document.querySelectorAll('.trashIcon')[index].addEventListener('click',async (e)=>{
-            console.log(e.target.id);
             const userRef = doc(db, 'Usuarios', userID2);
             await updateDoc(userRef, {
                 cart: arrayRemove(parseInt(e.target.id))

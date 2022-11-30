@@ -24,7 +24,7 @@ submitBtn.addEventListener('click', (e) => {
         name : name.value,
         price : parseInt(price.value),
         description: description.value,
-        type: [type.value],
+        type: type.value,
         collection: collection.value
     }
     createProducts(product)

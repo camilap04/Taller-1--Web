@@ -45,15 +45,16 @@ async function getSpecificUser(email) {
   return {userID, userInfo}
 }
 
+
 async function getSpecificProduct(ids) {
   let info;
   let id
   const q = query(collection(db, "Productos"), where("id", "==", ids));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach(async (doc) => {
-  // doc.data() is never undefined for query doc snapshots
-  id = doc.id
-  info = (doc.id, " => ", doc.data())
+    // doc.data() is never undefined for query doc snapshots
+    id = doc.id
+    info = (doc.id, " => ", doc.data())
   });
   return  {id, info}
 }
