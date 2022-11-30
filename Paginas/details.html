@@ -146,110 +146,104 @@
         </div>
       </footer>
     
-  <div class="add-product-modal-container invisible"> 
-    <div class="add-product-modal-background"></div>
-    <div class="add-product-modal">  
+      <div class="add-product-modal-container invisible"> 
+        <div class="add-product-modal-background"></div>
+        <div class="add-product-modal">  
+          
+          <section class="products">
+              <h2 class="products__title">Add product</h2>
+              <form action="" id="productsForm">
+                  <label for="name" class="products__label">NAME</label>
+                  <input type="text" name="name" placeholder="Product name" class="products__input productName" id="name">
       
-      <section class="products">
-          <h2 class="products__title">Add product</h2>
-          <form action="" id="productsForm">
-              <label for="name" class="products__label">NAME</label>
-              <input type="text" name="name" placeholder="Product name" class="products__input productName" id="name">
-  
-              <label for="category" class="products__label">CATEGORY</label>
-              <select name="category" id="category" class="products__input productCategory">
-                  <option hidden disabled selected value>Select an option... </option>
-                  <option value="Tops">Tops</option>
-                  <option value="T-shirts">T-shirts</option>
-                  <option value="Skirts">Skirts</option>
-                  <option value="Shorts">Shorts</option>
-              </select>
-  
-              <label for="category" class="products__label">COLLECTION</label>
-              <select name="category" id="category" class="products__input productCollection">
-                <option hidden disabled selected value>Select an option... </option>
-                <option value="The joy of happy accidents">The joy of happy accidents</option>
-                <option value="Summer love">Summer love</option>
-                <option value="Dream island">Dream island</option>
-                <option value="Siempre verano">Siempre verano</option>
-              </select>
-  
-              <label for="price" class="products__label products__label--price">PRICE</label>
-              <input type="number" name="price" placeholder="Product price" class="products__input productPrice" id="price">
-  
-              <label for="description" class="products__label">DESCRIPTION</label>
-              <textarea name="description" class="products__input products__input--description productDescription" id="description" placeholder="Describe the product here..."></textarea>
+                  <label for="category" class="products__label">CATEGORY</label>
+                  <select name="category" id="category" class="products__input productCategory">
                       <option hidden disabled selected value>Select an option... </option>
+                      <option value="Tops">Tops</option>
+                      <option value="T-shirts">T-shirts</option>
+                      <option value="Skirts">Skirts</option>
+                      <option value="Shorts">Shorts</option>
                   </select>
-                  <label for="description" class="products__label">Imagen (url)</label>
-                  <input type="text" name="image" placeholder="Url of an image" class="products__input productImgUrl" id="images">
-                  <input type="submit" value="ADD PRODUCT" class="products__submit">
-              </div>
-              
-          </form>
-  
-      </section>
-  
-    </div>
-
-  <div class="bag-modal-container invisible"> 
-    <div class="bag-modal-background"></div>
-    <div class="bag-modal">  
-   
-  
-    <section class="container">
-        <h2 class="container__title">Shopping bag</h2>
-        <div class="bagItems" id="bagSection"></div>
-        <div class="total">
-            <div class="total__first">
-                <h2 class="total__title">TOTAL:</h2>
-                <h2 class="total__total" id="totalSection">0</h2>
-            </div>
-            <div>
-                <a href="./checkout.html" class="total__checkout" id="checkoutBtn">GO TO CHECKOUT</a>
-              
-            </div>
-        </div>
-    </section>
-  
-    </div>
-  
-    </div>
-
-  <div class="logIn-modal-container invisible"> 
-    <div class="logIn-modal-background"></div>
-    <div class="logIn-modal">
-      <div class="inputLogin">
-        <span>Correo:</span>
-        <input class="loginEmail" type="text" name="" id="">
-      </div>
-      <div class="inputLogin">
-        <span>Contraseña:</span>
-        <input class="loginPassword" type="text" name="" id="">
-      </div>
-      <button class="loginBtn">Logearse</button>
-    </div>
-  </div>
-
-  <div class="register-modal-container invisible"> 
-    <div class="register-modal-background"></div>
-    <div class="register-modal">
-      <div class="inputRegister">
-        <span>Correo:</span>
-        <input class="registerEmail" type="text" name="" id="">
-      </div>
-      <div class="inputRegister">
-        <input class="registerAdmin" type="checkbox" name="" id="">
-        <span>Admin?</span>
-      </div>
-      <div class="inputRegister">
-        <span>Contraseña:</span>
-        <input class="registerPassword" type="text" name="" id="">
-      </div>
       
-      <button class="registerBtn">Registrarse</button>
-    </div>
-  </div>
+                  <label for="category" class="products__label ">COLLECTION</label>
+                  <select name="category" id="category" class="products__input productCollection">
+                    <option hidden disabled selected value>Select an option... </option>
+                    <option value="The joy of happy accidents">The joy of happy accidents</option>
+                    <option value="Summer love">Summer love</option>
+                    <option value="Dream island">Dream island</option>
+                    <option value="Siempre verano">Siempre verano</option>
+                  </select>
+                  
+                  <div>
+                    <label for="price" class="products__label products__label--price">PRICE</label>
+                <input type="number" name="price" placeholder="Product price" class="products__input productPrice" id="price">
+                <label for="description" class="products__label">DESCRIPTION</label>
+                <textarea name="description" class="products__input products__input--description productDescription" id="description" placeholder="Describe the product here..."></textarea>
+                      </div>
+                      <label for="description" class="products__label">Image (url)</label>
+                      <input type="text" name="image" placeholder="Url of an image" class="products__input productImgUrl" id="images">
+                      <input type="submit" value="ADD PRODUCT" class="products__submit">
+                  </div>
+              </form>
+      
+          </section>
+      
+        </div>
+    
+      <div class="bag-modal-container invisible"> 
+        <div class="bag-modal-background"></div>
+        <div class="bag-modal">  
+          <section class="container">
+            <h2 class="container__title">Shopping bag</h2>
+            <div class="bagItems" id="bagSection"></div>
+            <div class="total">
+                <div class="total__first">
+                    <h2 class="total__title">TOTAL:</h2>
+                    <h2 class="total__total" id="totalSection">0</h2>
+                </div>
+                <div>
+                    <a href="./checkout.html" class="total__checkout" id="checkoutBtn">GO TO CHECKOUT</a>
+                </div>
+            </div>
+          </section>
+        </div>
+      
+        </div>
+    
+      <div class="logIn-modal-container invisible"> 
+        <div class="logIn-modal-background"></div>
+        <div class="logIn-modal">
+          <div class="inputLogin">
+            <label for="name" class="products__label">Email</label>
+            <input type="text" name="name" placeholder="Email" class="products__input loginEmail" id="name">
+          </div>
+          <div class="inputLogin">
+            <label for="name" class="products__label">Password</label>
+            <input type="text" name="name" placeholder="Password" class="products__input loginPassword" id="name">
+          </div>
+          <input type="submit" value="Login" class="loginBtn">
+        </div>
+      </div>
+    
+      <div class="register-modal-container invisible"> 
+        <div class="register-modal-background"></div>
+        <div class="register-modal">
+          <div class="inputRegister">
+            <label for="name" class="products__label">Email</label>
+            <input type="text" name="name" placeholder="Email" class="products__input registerEmail" id="name">
+          </div>
+          <div class="inputRegister">
+            <input class="registerAdmin" type="checkbox" name="" id="">
+            <span>Admin?</span>
+          </div>
+          <div class="inputRegister">
+            <label for="name" class="products__label">Password</label>
+            <input type="text" name="name" placeholder="Password" class="products__input registerPassword" id="name">
+          </div>
+          
+          <input type="submit" value="Registrarse" class="registerBtn">
+        </div>
+      </div>
 
       <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
