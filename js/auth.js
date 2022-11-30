@@ -1,11 +1,11 @@
 import { logOut, loginUser, registerUser, onAuthStateChanged, auth, createUser, getSpecificUser, getSpecificProduct, arrayRemove, updateDoc, doc, db } from "./app.js";
 
-//LoginInputs
+// Se declara - LoginInputs
 const loginBtn = document.querySelector('.loginBtn');
 const loginPassword = document.querySelector('.loginPassword');
 const loginEmail = document.querySelector('.loginEmail');
 
-//RegisterInputs
+//Se declara - RegisterInputs
 const registerBtn = document.querySelector('.registerBtn');
 const registerPassword = document.querySelector('.registerPassword');
 const registerEmail = document.querySelector('.registerEmail');
@@ -32,7 +32,7 @@ registerBtn.addEventListener('click', async ()=>{
 function loadUserInfo() {
     onAuthStateChanged(auth, async (user) => {
         if (user) {
-            console.log('usuario logeado: ',user.email);
+         
             var {userInfo} = await getSpecificUser(user.email)
             if (userInfo.admin) {
                 console.log(userInfo.admin);

@@ -24,34 +24,36 @@
   const db = getFirestore(app);
 
   // Firestore
-
+//Llamo a todos los usuarios
 async function getUsers() {
   const usersCol = collection(db, 'Usuarios');
   const usersSnapshot = await getDocs(usersCol);
   const usersList = usersSnapshot.docs.map(doc => doc.data());
   return usersList
 }
+//Llamo un usuario en especifico, recibe por parametro (información que le tengo que pasar a la funcion para que funcione) en este caso el parametro es  email
+//esta funcion se usa en el login (busca la información para saber si es admin o no) y tambien se usa en el carrito (para saber a que usuario se le van agregar esos productos)
 
 async function getSpecificUser(email) {
-  let userInfo;
-  let userID;
-  const q = query(collection(db, "Usuarios"), where("nombre", "==", email));
-  const querySnapshot = await getDocs(q);
+  let userInfo; // declaramos las variables con let (solo funciona en este bloque de codigo, son temporanles)
+  let userID; 
+  const q = query(collection(db, "Usuarios"), where("nombre", "==", email)); // planteo la informacion que quiero traer (la info de usuarios y que haga match el user con la base de datos)//el where es un filtro que me indica que si el nombre que se escribio en el gmmail es igual al que esta registrado en firestor entonces s
+  const querySnapshot = await getDocs(q); // me trae esa informacion
   querySnapshot.forEach(async (doc) => {
   // doc.data() is never undefined for query doc snapshots
   userID = doc.id
   userInfo = (doc.id, " => ", doc.data())
   });
-  return {userID, userInfo}
+  return {userID, userInfo} 
 }
 
 
-async function getSpecificProduct(ids) {
+async function getSpecificProduct(ids) { // la funcon que recibe por parametro ids que es el id del producto que quiero bscar. Esto se usa para la pagina de detalles
   let info;
-  let id
-  const q = query(collection(db, "Productos"), where("id", "==", ids));
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach(async (doc) => {
+  let id // id del documento en firestore
+  const q = query(collection(db, "Productos"), where("id", "==", ids)); // cuando haga match el id con el id que recibi por parametro ( es decir ids)criterio
+  const querySnapshot = await getDocs(q); //accion - que busque
+  querySnapshot.forEach(async (doc) => { // aqui cuando llega la info pasa que... qu
     // doc.data() is never undefined for query doc snapshots
     id = doc.id
     info = (doc.id, " => ", doc.data())
@@ -59,24 +61,25 @@ async function getSpecificProduct(ids) {
   return  {id, info}
 }
 
-async function getProducts() {
-    const productsCol = collection(db, 'Productos');
-  const productsSnapshot = await getDocs(productsCol);
-  const productsList = productsSnapshot.docs.map(doc => doc.data());
+async function getProducts() { //esto se usa cuando quiero traer la info de los porductos ( se usa en la parte de tops.html para renderizar)
+  
+  const productsCol = collection(db, 'Productos'); //criterio
+  const productsSnapshot = await getDocs(productsCol); //busca la info
+  const productsList = productsSnapshot.docs.map(doc => doc.data()); // llega la info (sucede)
   return await productsList
 }
 
-async function createUser(nombre, admin) {
-  console.log('crear usuario: '+nombre, admin);
+async function createUser(email, admin) {
+  console.log('crear usuario: '+email, admin); // admin es booleano que determina si la persona es admin o nel
   try {
     const docRef = await addDoc(collection(db, "Usuarios"), {
-      nombre: nombre,
+      nombre: email,
       admin: admin,
       cart: []
     });
-    console.log("Document written with ID: ", docRef.id);
+    alert("Usuario creado exitosamente ");
   } catch (e) {
-    console.error("Error adding document: ", e);
+    alert("Error:", e);
   }
 }
 
@@ -106,11 +109,11 @@ async function createProducts(producto) {
 //Auth
 
 function registerUser(email, password) {
-  createUserWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(auth, email, password) // le estamos diciendo a firebase que cree un usuario con esos datos (email, paswword))
   .then(() => {
     alert('usuario registrado con exito');
-    console.log('usuario registrado' + email, password);
-    loginUser(email, password)
+
+    
   })
   .catch((error) => {
     const errorMessage = error.message;
